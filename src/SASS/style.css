@@ -1,0 +1,162 @@
+/* variables SASS */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+* {
+  list-style-type: none;
+}
+
+a,
+Link {
+  text-decoration: none;
+  color: black;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1240px;
+  margin-top: 50px;
+}
+.header-nav {
+  display: flex;
+  gap: 50px;
+}
+.header-nav li {
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
+  text-align: right;
+}
+
+.Main {
+  width: 100%;
+  max-width: 1240px;
+}
+
+.banner {
+  max-width: 1240px;
+  position: relative;
+  width: 100%;
+  height: 223px;
+  margin-bottom: 50px;
+}
+.banner img {
+  width: 100%;
+  height: 223px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25px;
+}
+.banner-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 223px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 60%;
+  border-radius: 25px;
+}
+.banner-background-title {
+  font-family: Montserrat;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 68.45px;
+  text-align: left;
+  color: white;
+}
+
+.gallery {
+  background-color: bisque;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  grid-template-rows: repeat(7, 340px);
+  justify-items: center;
+  grid-gap: 50px;
+  width: 100%;
+  max-width: 1240px;
+  height: 729px;
+  border-radius: 25px;
+  overflow-y: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  background-color: #f6f6f6;
+}
+.gallery-appartement {
+  position: relative;
+  background-color: #ff6060;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.gallery-appartement img {
+  width: 100%;
+  max-width: 340px;
+  height: 340px;
+  border-radius: 10px;
+}
+.gallery-appartement h3 {
+  position: absolute;
+  width: 100%;
+  max-width: 300px;
+  height: 52px;
+  bottom: 0;
+  left: 22px;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.67px;
+  text-align: left;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background-color: black;
+  width: 100%;
+  height: 209px;
+  gap: 25px;
+}
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
+.footer-copyright {
+  color: white;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

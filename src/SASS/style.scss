@@ -2,6 +2,8 @@
 
 $principal-color: #ff6060;
 
+/* ******************************************************************* GENERAL ******************************************************************* */
+
 html,
 body {
   margin: 0;
@@ -22,8 +24,15 @@ Link {
   color: black;
 }
 
+ul {
+  padding: 0;
+}
+
 /* ********************************************************************* SASS *************************************************************** */
 
+/* ------------------------------------------------------------------- HOME ------------------------------------------------------------------ */
+
+/* classe permettant de souligner la navigation en fonction de la page sur laquelle nous sommes */
 .active {
   text-decoration: underline;
 }
@@ -41,6 +50,8 @@ Link {
   align-items: center;
   gap: 50px;
 }
+
+/* --------------------------------------------------------------------- HEADER ---------------------------------------------------------------------- */
 
 .header {
   display: flex;
@@ -61,10 +72,14 @@ Link {
   }
 }
 
+/* ------------------------------------------------------------------------ MAIN -------------------------------------------------------------------- */
+
 .Main {
   width: 100%;
   max-width: 1240px;
 }
+
+/* ---------------------------------------------------------------------- BANNER --------------------------------------------------------------------- */
 
 .banner {
   max-width: 1240px;
@@ -89,9 +104,10 @@ Link {
     border-radius: 25px;
   }
   &-title {
+    display: flex;
+    justify-content: center;
     position: absolute;
-    top: 30px;
-    left: 310px;
+    inset: 25px;
     font-family: Montserrat;
     font-size: 48px;
     font-weight: 700;
@@ -100,6 +116,8 @@ Link {
     color: white;
   }
 }
+
+/* --------------------------------------------------------------------- GALLERY ---------------------------------------------------------------- */
 
 .gallery {
   background-color: bisque;
@@ -119,7 +137,6 @@ Link {
   background-color: #f6f6f6;
   &-appartement {
     position: relative;
-    background-color: $principal-color;
     color: white;
     width: 100%;
     height: 100%;
@@ -146,6 +163,8 @@ Link {
   }
 }
 
+/* ------------------------------------------------------------------------- FOOTER ---------------------------------------------------------------- */
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -169,7 +188,7 @@ Link {
   }
 }
 
-/* ********************************************************** PAGE 404 ERROR ********************************************************************/
+/* ******************************************************************** PAGE 404 ERROR ***********************************************************/
 
 .error {
   display: flex;
@@ -199,4 +218,27 @@ Link {
   text-decoration: underline;
 }
 
-/* *** */
+/* ******************************************************************* PAGE ABOUT ******************************************************************* */
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  .aboutList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    width: 100%;
+    height: 52px;
+    max-width: 1023px;
+    padding: 0px 15px;
+    background-color: $principal-color;
+    color: #f6f6f6;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 5px;
+  }
+}

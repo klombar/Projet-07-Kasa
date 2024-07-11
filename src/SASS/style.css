@@ -1,4 +1,5 @@
 /* variables SASS */
+/* ******************************************************************* GENERAL ******************************************************************* */
 html,
 body {
   margin: 0;
@@ -20,7 +21,13 @@ Link {
   color: black;
 }
 
+ul {
+  padding: 0;
+}
+
 /* ********************************************************************* SASS *************************************************************** */
+/* ------------------------------------------------------------------- HOME ------------------------------------------------------------------ */
+/* classe permettant de souligner la navigation en fonction de la page sur laquelle nous sommes */
 .active {
   text-decoration: underline;
 }
@@ -39,6 +46,7 @@ Link {
   gap: 50px;
 }
 
+/* --------------------------------------------------------------------- HEADER ---------------------------------------------------------------------- */
 .header {
   display: flex;
   justify-content: space-between;
@@ -58,11 +66,13 @@ Link {
   text-align: right;
 }
 
+/* ------------------------------------------------------------------------ MAIN -------------------------------------------------------------------- */
 .Main {
   width: 100%;
   max-width: 1240px;
 }
 
+/* ---------------------------------------------------------------------- BANNER --------------------------------------------------------------------- */
 .banner {
   max-width: 1240px;
   position: relative;
@@ -88,9 +98,10 @@ Link {
   border-radius: 25px;
 }
 .banner-title {
+  display: flex;
+  justify-content: center;
   position: absolute;
-  top: 30px;
-  left: 310px;
+  inset: 25px;
   font-family: Montserrat;
   font-size: 48px;
   font-weight: 700;
@@ -99,6 +110,7 @@ Link {
   color: white;
 }
 
+/* --------------------------------------------------------------------- GALLERY ---------------------------------------------------------------- */
 .gallery {
   background-color: bisque;
   display: grid;
@@ -118,7 +130,6 @@ Link {
 }
 .gallery-appartement {
   position: relative;
-  background-color: #ff6060;
   color: white;
   width: 100%;
   height: 100%;
@@ -144,6 +155,7 @@ Link {
   text-align: left;
 }
 
+/* ------------------------------------------------------------------------- FOOTER ---------------------------------------------------------------- */
 .footer {
   display: flex;
   flex-direction: column;
@@ -167,7 +179,7 @@ Link {
   text-align: center;
 }
 
-/* ********************************************************** PAGE 404 ERROR ********************************************************************/
+/* ******************************************************************** PAGE 404 ERROR ***********************************************************/
 .error {
   display: flex;
   justify-content: center;
@@ -197,4 +209,26 @@ Link {
   text-decoration: underline;
 }
 
-/* *** *//*# sourceMappingURL=style.css.map */
+/* ******************************************************************* PAGE ABOUT ******************************************************************* */
+.dropdown {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.dropdown .aboutList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  width: 100%;
+  height: 52px;
+  max-width: 1023px;
+  padding: 0px 15px;
+  background-color: #ff6060;
+  color: #f6f6f6;
+  font-family: Montserrat;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 5px;
+}/*# sourceMappingURL=style.css.map */

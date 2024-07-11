@@ -224,8 +224,7 @@ ul {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 20px;
-  .aboutList {
+  .about-list {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -240,5 +239,17 @@ ul {
     font-size: 24px;
     font-weight: 700;
     border-radius: 5px;
+    &-content {
+      max-width: 1023px;
+      padding: 0px 15px;
+      background-color: rgba(246, 246, 246, 0.4509803922);
+      font-family: Montserrat;
+      font-size: 20px;
+      font-weight: 400;
+      text-align: left;
+      color: black;
+      margin-bottom: 20px;
+      padding: 13px 15px;
+    }
   }
 }

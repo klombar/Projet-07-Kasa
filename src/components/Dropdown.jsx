@@ -25,15 +25,21 @@ export default function Dropdown() {
       <ul className="dropdown">
         {data.map((collapse) => {
           return (
-            <li
-              className="aboutList"
-              key={(collapse.index, collapse.aboutTitle)}
-            >
-              {collapse.aboutTitle}{" "}
-              <span className="aboutListChevron">
-                <img src={chevron} alt="chevron qui deroule le menu au click" />
-              </span>
-            </li>
+            <>
+              <li
+                className="about-list"
+                key={(collapse.index, collapse.aboutTitle)}
+              >
+                {collapse.aboutTitle}{" "}
+                <span className="about-list-chevron">
+                  <img
+                    src={chevron}
+                    alt="chevron qui deroule le menu au click"
+                  />
+                </span>
+              </li>
+              <div className="about-list-content">{collapse.aboutText}</div>
+            </>
           );
         })}
       </ul>

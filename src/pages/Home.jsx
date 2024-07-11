@@ -1,8 +1,8 @@
-import Header from "../component/Header";
-import Banner from "../component/Banner";
-import Gallery from "../component/Gallery";
-import Footer from "../component/Footer";
-import Main from "../component/Main";
+import Header from "../components/Header";
+import Banner from "../components/Banner";
+import Gallery from "../components/Gallery";
+import Footer from "../components/Footer";
+import Main from "../components/Main";
 import bannerHomeImage from "../assets/Images/bannerHomeImage.png";
 
 export default function Home() {

@@ -162,3 +162,35 @@ Link {
     text-align: center;
   }
 }
+
+/* ********************************************************** PAGE 404 ERROR ********************************************************************/
+
+.error {
+  font-family: Montserrat;
+  font-size: 288px;
+  font-weight: 700;
+  line-height: 410.69px;
+  text-align: center;
+  margin: 0;
+  color: $principal-color;
+}
+
+.error-text {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51.34px;
+  text-align: left;
+  color: $principal-color;
+}
+
+.error-return-home {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* *** */

@@ -160,4 +160,35 @@ Link {
   font-weight: 500;
   line-height: 34.22px;
   text-align: center;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* ********************************************************** PAGE 404 ERROR ********************************************************************/
+.error {
+  font-family: Montserrat;
+  font-size: 288px;
+  font-weight: 700;
+  line-height: 410.69px;
+  text-align: center;
+  margin: 0;
+  color: #ff6060;
+}
+
+.error-text {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51.34px;
+  text-align: left;
+  color: #ff6060;
+}
+
+.error-return-home {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25.67px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* *** *//*# sourceMappingURL=style.css.map */

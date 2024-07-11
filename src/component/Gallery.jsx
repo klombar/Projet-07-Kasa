@@ -12,7 +12,6 @@ export default function Gallery() {
     try {
       const response = await fetch("logements.json");
       const jsonData = await response.json();
-      console.log(jsonData);
       setData(jsonData);
     } catch (error) {
       console.log(

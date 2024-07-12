@@ -214,7 +214,6 @@ ul {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 30px;
 }
 .dropdown .about-list {
   display: flex;
@@ -238,12 +237,12 @@ ul {
   background-color: rgba(246, 246, 246, 0.4509803922);
   font-family: Montserrat;
   line-height: 30px;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 400;
   text-align: left;
   color: black;
-  margin-bottom: 20px;
-  transition: 0.3s;
+  margin-bottom: 30px;
+  padding: 15px 15px;
 }
 
 /* KEYFRAME ABOUT CHEVRON */
@@ -252,7 +251,7 @@ ul {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
   }
 }
 .rotate {

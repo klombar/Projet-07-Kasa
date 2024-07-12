@@ -34,6 +34,17 @@ ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
     }
   }
 
+  const [isActive, setIsActive] = useState(false);
+
+  function handleClick() {
+    setIsActive(!isActive);
+  }
+
+  function handleCombinedClick(index) {
+    handleItemClick(index);
+    handleClick();
+  }
+
   return (
     <>
       <ul className="dropdown">
@@ -43,8 +54,8 @@ ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
               <li className="about-list" key={index}>
                 {collapse.aboutTitle}
                 <span
-                  className="about-list-chevron"
-                  onClick={() => handleItemClick(index)}
+                  className={`about-list-chevron ${isActive ? "rotate" : ""}`}
+                  onClick={() => handleCombinedClick(index)}
                 >
                   <img
                     src={chevron}

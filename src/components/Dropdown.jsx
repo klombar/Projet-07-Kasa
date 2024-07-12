@@ -1,3 +1,4 @@
+import React from "React";
 import { useEffect, useState } from "react";
 import chevron from "../assets/Images/aboutListChevron.png";
 
@@ -20,26 +21,41 @@ export default function Dropdown() {
     }
   }
 
+  /* Déclaration de variable d'état pour les menus déroulants de la page About qui permettra d'ajouter ou supprimer un element d'un tableau (vide par defaut) */
+  const [openedItems, setOpenedItems] = useState([]);
+
+  /* Fonction qui permet  de supprimer l'index d'un élément sur lequel on a déjà cliqué du tableau OpenedItem avec la methode filter() 
+ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
+  function handleItemClick(itemIndex) {
+    if (openedItems.includes(itemIndex)) {
+      setOpenedItems(openedItems.filter((index) => index !== itemIndex));
+    } else {
+      setOpenedItems([...openedItems, itemIndex]);
+    }
+  }
+
   return (
     <>
       <ul className="dropdown">
-        {data.map((collapse) => {
+        {data.map((collapse, index) => {
           return (
-            <>
-              <li
-                className="about-list"
-                key={(collapse.index, collapse.aboutTitle)}
-              >
-                {collapse.aboutTitle}{" "}
-                <span className="about-list-chevron">
+            <React.Fragment key={index}>
+              <li className="about-list" key={index}>
+                {collapse.aboutTitle}
+                <span
+                  className="about-list-chevron"
+                  onClick={() => handleItemClick(index)}
+                >
                   <img
                     src={chevron}
                     alt="chevron qui deroule le menu au click"
                   />
                 </span>
               </li>
-              <div className="about-list-content">{collapse.aboutText}</div>
-            </>
+              {openedItems.includes(index) && (
+                <div className="about-list-content">{collapse.aboutText}</div>
+              )}
+            </React.Fragment>
           );
         })}
       </ul>

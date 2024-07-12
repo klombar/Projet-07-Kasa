@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import { useEffect, useState } from "react";
 import chevron from "../assets/Images/aboutListChevron.png";
 
@@ -29,13 +29,13 @@ export default function Dropdown() {
   /* Fonction qui permet  de supprimer l'index d'un élément sur lequel on a déjà cliqué du tableau OpenedItem avec la methode filter() 
 ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
   function handleItemClick(itemIndex) {
-    setAnimationEnabled((prev) => ({ ...prev, [itemIndex]: true }));
+    setAnimationEnabled((oldState) => ({ ...oldState, [itemIndex]: true }));
     if (openedItems.includes(itemIndex)) {
       setOpenedItems(openedItems.filter((index) => index !== itemIndex));
-      setActiveIndexes((prev) => ({ ...prev, [itemIndex]: false })); // Set to false on collapse
+      setActiveIndexes((oldState) => ({ ...oldState, [itemIndex]: false }));
     } else {
       setOpenedItems([...openedItems, itemIndex]);
-      setActiveIndexes((prev) => ({ ...prev, [itemIndex]: true })); // Set to true on expand
+      setActiveIndexes((oldState) => ({ ...oldState, [itemIndex]: true }));
     }
   }
 

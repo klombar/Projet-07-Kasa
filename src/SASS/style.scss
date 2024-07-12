@@ -129,7 +129,9 @@ ul {
   max-width: 1240px;
   height: 729px;
   border-radius: 25px;
-  overflow-y: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
   justify-content: center;
   align-items: center;
   padding: 50px 0;

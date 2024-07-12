@@ -23,6 +23,7 @@ Link {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 
 /* ********************************************************************* SASS *************************************************************** */
@@ -43,7 +44,7 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
 }
 
 /* --------------------------------------------------------------------- HEADER ---------------------------------------------------------------------- */
@@ -78,7 +79,6 @@ ul {
   position: relative;
   width: 100%;
   height: 223px;
-  margin-bottom: 50px;
 }
 .banner img {
   width: 100%;
@@ -112,7 +112,6 @@ ul {
 
 /* --------------------------------------------------------------------- GALLERY ---------------------------------------------------------------- */
 .gallery {
-  background-color: bisque;
   display: grid;
   grid-template-columns: repeat(3, 340px);
   grid-template-rows: repeat(7, 340px);
@@ -126,6 +125,7 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 50px 0;
+  margin-top: 30px;
   background-color: #f6f6f6;
 }
 .gallery-appartement {
@@ -230,10 +230,11 @@ ul {
   font-size: 24px;
   font-weight: 700;
   border-radius: 5px;
+  margin-top: 30px;
 }
 .dropdown .about-list-content {
   max-width: 1023px;
-  padding: 0px 15px;
+  padding: 15px 15px;
   background-color: rgba(246, 246, 246, 0.4509803922);
   font-family: Montserrat;
   line-height: 30px;
@@ -241,19 +242,42 @@ ul {
   font-weight: 400;
   text-align: left;
   color: black;
-  margin-bottom: 30px;
-  padding: 15px 15px;
 }
 
-/* KEYFRAME ABOUT CHEVRON */
+/* KEYFRAME PAGE : ABOUT CHEVRON */
 @keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(180deg);
+    transform: rotate(-180deg);
+  }
+}
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(-180deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }
 .rotate {
-  animation: rotate 0.5s linear;
+  animation: rotate 0.25s linear forwards;
+}
+
+.rotate-reverse {
+  animation: rotate-reverse 0.25s linear forwards;
+}
+
+/* KEYFRAMES PAGE : ABOUT COLLAPSE */
+@keyframes translateY {
+  from {
+    max-height: 0px;
+  }
+  to {
+    max-height: 120px;
+  }
+}
+.expand {
+  animation: translateY 0.3s linear forwards;
 }/*# sourceMappingURL=style.css.map */

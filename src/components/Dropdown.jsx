@@ -4,6 +4,11 @@ import chevron from "../assets/Images/aboutListChevron.png";
 
 export default function Dropdown() {
   const [data, setData] = useState([]);
+  /* Déclaration de variable d'état pour les menus déroulants de la page About qui permettra d'ajouter ou supprimer un element d'un tableau (vide par defaut) */
+  const [openedItems, setOpenedItems] = useState([]);
+  const [activeIndexes, setActiveIndexes] = useState({});
+  const [animationEnabled, setAnimationEnabled] = useState(false);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -21,28 +26,17 @@ export default function Dropdown() {
     }
   }
 
-  /* Déclaration de variable d'état pour les menus déroulants de la page About qui permettra d'ajouter ou supprimer un element d'un tableau (vide par defaut) */
-  const [openedItems, setOpenedItems] = useState([]);
-
   /* Fonction qui permet  de supprimer l'index d'un élément sur lequel on a déjà cliqué du tableau OpenedItem avec la methode filter() 
 ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
   function handleItemClick(itemIndex) {
+    setAnimationEnabled((prev) => ({ ...prev, [itemIndex]: true }));
     if (openedItems.includes(itemIndex)) {
       setOpenedItems(openedItems.filter((index) => index !== itemIndex));
+      setActiveIndexes((prev) => ({ ...prev, [itemIndex]: false })); // Set to false on collapse
     } else {
       setOpenedItems([...openedItems, itemIndex]);
+      setActiveIndexes((prev) => ({ ...prev, [itemIndex]: true })); // Set to true on expand
     }
-  }
-
-  const [isActive, setIsActive] = useState(false);
-
-  function handleClick() {
-    setIsActive(!isActive);
-  }
-
-  function handleCombinedClick(index) {
-    handleItemClick(index);
-    handleClick();
   }
 
   return (
@@ -54,8 +48,14 @@ ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
               <li className="about-list" key={index}>
                 {collapse.aboutTitle}
                 <span
-                  className={`about-list-chevron ${isActive ? "rotate" : ""}`}
-                  onClick={() => handleCombinedClick(index)}
+                  className={`about-list-chevron ${
+                    animationEnabled[index]
+                      ? activeIndexes[index]
+                        ? "rotate"
+                        : "rotate-reverse"
+                      : ""
+                  }`}
+                  onClick={() => handleItemClick(index)}
                 >
                   <img
                     src={chevron}
@@ -64,7 +64,13 @@ ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
                 </span>
               </li>
               {openedItems.includes(index) && (
-                <div className="about-list-content">{collapse.aboutText}</div>
+                <div
+                  className={`about-list-content ${
+                    openedItems.includes(index) ? "expand" : ""
+                  }`}
+                >
+                  {collapse.aboutText}
+                </div>
               )}
             </React.Fragment>
           );

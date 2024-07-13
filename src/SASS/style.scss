@@ -121,7 +121,7 @@ ul {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 340px);
+  grid-template-columns: repeat(auto-fill, minmax(150px, 340px));
   grid-template-rows: repeat(7, 340px);
   justify-items: center;
   grid-gap: 50px;
@@ -226,6 +226,7 @@ ul {
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
   .about-list {
     display: flex;
     align-items: center;
@@ -241,13 +242,13 @@ ul {
     font-size: 24px;
     font-weight: 700;
     border-radius: 5px;
-    margin-top: 30px;
+    margin-top: 20px;
     &-content {
       max-width: 1023px;
       padding: 15px 15px;
       background-color: rgba(246, 246, 246, 0.4509803922);
       font-family: Montserrat;
-      line-height: 30px;
+      line-height: 25px;
       font-size: 21px;
       font-weight: 400;
       text-align: left;
@@ -286,15 +287,19 @@ ul {
 
 /* KEYFRAMES PAGE : ABOUT COLLAPSE */
 
-@keyframes translateY {
-  from {
-    max-height: 0px;
+@keyframes expand {
+  0% {
+    transform: translateY(-100%);
   }
-  to {
-    max-height: 120px;
+  100% {
+    transform: translateY(0%);
   }
 }
 
-.expand {
-  animation: translateY 0.3s linear forwards;
+.about-list-content.expand {
+  animation: expand 0.5s linear forwards;
+}
+
+.wrapper {
+  overflow: hidden;
 }

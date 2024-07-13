@@ -64,12 +64,14 @@ ou d'en ajouter un nouveau si il n'est pas déjà dans le tableau */
                 </span>
               </li>
               {openedItems.includes(index) && (
-                <div
-                  className={`about-list-content ${
-                    openedItems.includes(index) ? "expand" : ""
-                  }`}
-                >
-                  {collapse.aboutText}
+                <div className="wrapper">
+                  <div
+                    className={`about-list-content ${
+                      openedItems.includes(index) ? "expand" : ""
+                    }`}
+                  >
+                    {collapse.aboutText}
+                  </div>
                 </div>
               )}
             </React.Fragment>

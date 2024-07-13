@@ -4,6 +4,7 @@ import About from "../pages/About";
 import Error404 from "../pages/Error404";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import AppartementContent from "./AppartementContent";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
+          <Route path="/AppartementContent" element={<AppartementContent />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />

@@ -16,6 +16,7 @@ img {
 
 * {
   list-style-type: none;
+  scroll-behavior: smooth;
 }
 
 a,
@@ -245,7 +246,7 @@ ul {
     margin-top: 20px;
     &-content {
       max-width: 1023px;
-      padding: 15px 15px;
+      padding: 0px 15px;
       background-color: rgba(246, 246, 246, 0.4509803922);
       font-family: Montserrat;
       line-height: 25px;
@@ -253,6 +254,8 @@ ul {
       font-weight: 400;
       text-align: left;
       color: black;
+      transition: max-height 0.4s linear, transform 0.4s linear;
+      overflow: hidden;
     }
   }
 }
@@ -286,18 +289,14 @@ ul {
 }
 
 /* KEYFRAMES PAGE : ABOUT COLLAPSE */
-
-@keyframes expand {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
+.about-list-content.expand {
+  max-height: 200px; /* Ajustez selon vos besoins */
+  transform: translateY(0);
 }
 
-.about-list-content.expand {
-  animation: expand 0.5s linear forwards;
+.about-list-content.unexpand {
+  max-height: 0;
+  transform: translateY(-100%);
 }
 
 .wrapper {

@@ -14,7 +14,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
-          <Route path="/AppartementContent" element={<AppartementContent />} />
+          <Route
+            path="/AppartementContent/`:id`"
+            element={<AppartementContent />}
+          />
           <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />

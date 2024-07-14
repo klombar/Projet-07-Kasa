@@ -26,6 +26,7 @@ export default function Gallery() {
       {data.map((appartement) => (
         <Appartement
           key={appartement.id}
+          id={appartement.id}
           cover={appartement.cover}
           title={appartement.title}
         />

@@ -244,7 +244,6 @@ ul {
     border-radius: 5px;
     &-content {
       max-width: 1023px;
-      padding: 15px 15px;
       background-color: rgba(246, 246, 246, 0.4509803922);
       font-family: Montserrat;
       line-height: 25px;
@@ -252,7 +251,7 @@ ul {
       font-weight: 400;
       text-align: left;
       color: black;
-      transition: max-height 0.2s ease, transform 0.2s ease;
+      transition: height 0.2s ease, transform 0.2s ease, padding 0.3s ease;
       overflow: hidden;
     }
     &-chevron {
@@ -269,14 +268,16 @@ ul {
 }
 
 .about-list-content.expand {
-  max-height: 120px;
+  height: auto;
   transform: translateY(0);
+  padding: 15px 15px;
   margin-bottom: 20px;
 }
 
 .about-list-content.unexpand {
   transform: translateY(-100%);
-  max-height: 0;
+  height: 0;
+  padding: 15px 15px;
 }
 
 .wrapper {

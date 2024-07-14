@@ -36,9 +36,7 @@ export default function Dropdown() {
               {collapse.aboutTitle}
               <span
                 className={`about-list-chevron ${
-                  activeIndexes.includes(index)
-                    ? "clicked rotate"
-                    : "clicked rotate-reverse"
+                  activeIndexes.includes(index) ? "rotate" : "rotate-reverse"
                 }`}
                 onClick={() => handleItemClick(index)}
               >

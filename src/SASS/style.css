@@ -45,7 +45,6 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
 }
 
 /* --------------------------------------------------------------------- HEADER ---------------------------------------------------------------------- */
@@ -54,7 +53,7 @@ ul {
   justify-content: space-between;
   width: 100%;
   max-width: 1240px;
-  margin-top: 50px;
+  margin: 50px 0 30px 0;
 }
 .header-nav {
   display: flex;
@@ -128,7 +127,7 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 50px 0;
-  margin-top: 30px;
+  margin-top: 35px;
   background-color: #f6f6f6;
 }
 .gallery-appartement {
@@ -217,7 +216,7 @@ ul {
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow: hidden;
+  margin-top: 35px;
 }
 .dropdown .about-list {
   display: flex;
@@ -234,56 +233,40 @@ ul {
   font-size: 24px;
   font-weight: 700;
   border-radius: 5px;
-  margin-top: 20px;
 }
 .dropdown .about-list-content {
   max-width: 1023px;
-  padding: 0px 15px;
+  padding: 15px 15px;
   background-color: rgba(246, 246, 246, 0.4509803922);
   font-family: Montserrat;
   line-height: 25px;
-  font-size: 21px;
+  font-size: 19px;
   font-weight: 400;
   text-align: left;
   color: black;
-  transition: max-height 0.4s linear, transform 0.4s linear;
+  transition: max-height 0.2s ease, transform 0.2s ease;
   overflow: hidden;
 }
-
-/* KEYFRAME PAGE : ABOUT CHEVRON */
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-180deg);
-  }
+.dropdown .about-list-chevron {
+  transition: transform 0.25s linear;
+  cursor: pointer;
 }
-@keyframes rotate-reverse {
-  from {
-    transform: rotate(-180deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
+.dropdown .about-list-chevron.rotate {
+  transform: rotate(-180deg);
 }
-.rotate {
-  animation: rotate 0.25s linear forwards;
+.dropdown .about-list-chevron.rotate-reverse {
+  transform: rotate(0deg);
 }
 
-.rotate-reverse {
-  animation: rotate-reverse 0.25s linear forwards;
-}
-
-/* KEYFRAMES PAGE : ABOUT COLLAPSE */
 .about-list-content.expand {
-  max-height: 200px; /* Ajustez selon vos besoins */
+  max-height: 120px;
   transform: translateY(0);
+  margin-bottom: 20px;
 }
 
 .about-list-content.unexpand {
-  max-height: 0;
   transform: translateY(-100%);
+  max-height: 0;
 }
 
 .wrapper {

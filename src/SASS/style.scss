@@ -1,6 +1,6 @@
 /* variables SASS */
 
-$principal-color: #ff6060;
+$primary-color: #ff6060;
 
 /* ******************************************************************* GENERAL ******************************************************************* */
 
@@ -210,7 +210,7 @@ h6 {
   max-width: 650px;
   height: 280px;
   margin: 0;
-  color: $principal-color;
+  color: $primary-color;
   & img {
     object-fit: cover;
   }
@@ -221,7 +221,7 @@ h6 {
   font-size: 36px;
   font-weight: 500;
   text-align: left;
-  color: $principal-color;
+  color: $primary-color;
 }
 
 .error-return-home {
@@ -248,7 +248,7 @@ h6 {
     height: 52px;
     max-width: 1023px;
     padding: 0px 15px;
-    background-color: $principal-color;
+    background-color: $primary-color;
     color: #f6f6f6;
     font-family: Montserrat;
     font-size: 24px;
@@ -332,5 +332,77 @@ h6 {
     max-width: 96px;
     max-height: 120px;
     background-color: black;
+  }
+}
+
+.appartement {
+  display: flex;
+  flex-direction: column;
+  &-contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      &-titles {
+        &-title {
+          font-family: Montserrat;
+          font-size: 36px;
+          font-weight: 500;
+          line-height: 51.34px;
+          text-align: left;
+          color: $primary-color;
+        }
+        &-subtitles {
+          font-family: Montserrat;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 25.67px;
+          text-align: left;
+        }
+      }
+      &-host {
+        border: 1px solid black;
+        display: flex;
+        gap: 10px;
+        &-name {
+          display: flex;
+          align-items: center;
+          font-family: Montserrat;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 25.67px;
+          text-align: right;
+          color: $primary-color;
+        }
+        &-image img {
+          width: 100%;
+          max-width: 64px;
+          height: 64px;
+          border-radius: 65px;
+        }
+      }
+    }
+    &-helper {
+      display: flex;
+      border: 1px solid black;
+      &-tags {
+        display: flex;
+        gap: 5px;
+        &-tag {
+          color: white;
+          background-color: $primary-color;
+          border-radius: 15px;
+          padding: 0px 15px 0px 15px;
+          height: 20px;
+          font-family: Montserrat;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 19.96px;
+          text-align: center;
+        }
+      }
+    }
   }
 }

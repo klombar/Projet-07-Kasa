@@ -59,7 +59,7 @@ ul {
   justify-content: space-between;
   width: 100%;
   max-width: 1240px;
-  margin: 50px 0 30px 0;
+  margin: 35px 0 35px 0;
   &-nav {
     display: flex;
     align-items: center;
@@ -138,7 +138,7 @@ ul {
   align-items: center;
   padding: 50px 0;
   margin-top: 35px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   background-color: #f6f6f6;
   &-appartement {
     position: relative;
@@ -293,4 +293,30 @@ ul {
   align-items: center;
   gap: 30px;
   margin-bottom: 75px;
+}
+
+/* ******************************************************************** APPARTEMENTS PAGES ************************************************************************/
+
+.carrousel-wrapper {
+  width: 100%;
+  max-width: 1240px;
+}
+
+.carrousel {
+  width: 100vw;
+  max-width: 1240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 415px;
+  &-left-arrow {
+    max-width: 96px;
+    max-height: 120px;
+    background-color: black;
+  }
+  &-right-arrow {
+    max-width: 96px;
+    max-height: 120px;
+    background-color: black;
+  }
 }

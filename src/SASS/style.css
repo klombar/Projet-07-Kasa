@@ -1,5 +1,10 @@
 /* variables SASS */
 /* ******************************************************************* GENERAL ******************************************************************* */
+* {
+  list-style-type: none;
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   margin: 0;
@@ -11,11 +16,6 @@ img {
      object-fit: cover;
 }
 
-* {
-  list-style-type: none;
-  scroll-behavior: smooth;
-}
-
 a,
 Link {
   text-decoration: none;
@@ -24,6 +24,15 @@ Link {
 
 ul {
   padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -286,25 +295,29 @@ ul {
 }
 
 /* ******************************************************************** APPARTEMENTS PAGES ************************************************************************/
-.carrousel-wrapper {
+.appartement-carrousel {
   width: 100%;
   max-width: 1240px;
 }
 
 .carrousel {
+  position: relative;
+  border: 1px solid black;
   width: 100vw;
   max-width: 1240px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   height: 415px;
 }
 .carrousel-left-arrow {
+  position: absolute;
+  top: 130px;
   max-width: 96px;
   max-height: 120px;
   background-color: black;
 }
 .carrousel-right-arrow {
+  position: absolute;
+  top: 130px;
+  right: 0px;
   max-width: 96px;
   max-height: 120px;
   background-color: black;

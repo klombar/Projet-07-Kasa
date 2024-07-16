@@ -5,6 +5,7 @@ export default function carrousel(props) {
   return (
     <>
       <div className="carrousel">
+        <img src="" alt="" />
         <img
           className="carrousel-left-arrow"
           src={leftArrow}

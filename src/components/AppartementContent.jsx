@@ -7,40 +7,37 @@ import starFull from "../assets/Images/star-full.png";
 import starVoid from "../assets/Images/star-void.png";
 import Error404 from "../pages/Error404";
 import data from "../data/logements.json";
+import chevron from "../assets/Images/aboutListChevron.png";
+console.log(data);
 
-// Composant  qui s'affiche quand on clique sur l'image d'un appartement dans la page HOME avec les data du fichier logement.json en paramètres;
 export default function AppartementContent() {
-  const { id } = useParams(); //Récupération de l'ID via la déstructuration de la pair clef/valeur retourné par useParams();
+  const { id } = useParams();
   const [appartement, setAppartement] = useState(null);
+  const [isOpenDescription, setIsOpenDescription] = useState(false);
+  const [isOpenEquipments, setIsOpenEquipments] = useState(false);
 
   useEffect(() => {
-    const getAppartementData = () => {
-      //Utilisation de la methode find() pour trouver dans les data l'ID des données qui correspond a l'ID de l'URL.
+    async function getAppartementData() {
       const clickedAppartement = data.find((app) => app.id === id);
-
-      //Condition qui met a jour la variable appartement, si clickedAppartement == true (si un id correspondant a l'ID de la page a été trouvé dans data);
       if (clickedAppartement) {
         setAppartement(clickedAppartement);
       } else {
         console.log("Appartement not found");
       }
-    };
-
+    }
     getAppartementData();
-  }, [id]); //L'effet est déclenché chaque fois que "id" ou "data" change;
+  }, [id]);
 
   if (!appartement) {
     return <Error404 />;
   }
 
-  const rating = parseInt(appartement.rating); // conversion en nombre entier de la notation des appartements en nombre sous forme de string;
-  /* Création d'un nouveau tableau de  éléments avec la méthode array.from() & une logique permettant d'afficher 
-  la notation sous forme d'etoiles pleine ou vide selon l'appartement.*/
+  const rating = parseInt(appartement.rating);
   const ratingArray = Array.from({ length: 5 }, (_, index) =>
     index < rating ? starFull : starVoid
   );
 
-  const { tags } = appartement;
+  const { tags, equipments } = appartement;
 
   return (
     <div className="appartement">
@@ -80,6 +77,56 @@ export default function AppartementContent() {
                 <img src={star} alt="star" />
               </div>
             ))}
+          </div>
+        </div>
+        <div className="appartement-contents-dropdowns">
+          <div className="appartement-contents-dropdowns-description">
+            <div
+              className={`appartement-contents-dropdowns-description-content ${
+                isOpenDescription ? "expand" : "unexpand"
+              }`}
+            >
+              {appartement.description}
+              <div className="appartement-contents-dropdowns-description-title">
+                Description
+                <div
+                  className={`appartement-contents-dropdowns-description-title-chevron ${
+                    isOpenDescription ? "rotate" : "rotate-reverse"
+                  }`}
+                  onClick={() => setIsOpenDescription(!isOpenDescription)}
+                >
+                  <img
+                    src={chevron}
+                    alt="Chevron qui permettra l'ouverture et la fermeture du collapse"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="appartement-contents-dropdowns-equipments">
+            <div
+              className={`appartement-contents-dropdowns-equipments-content ${
+                isOpenEquipments ? "expand" : "unexpand"
+              }`}
+            >
+              {equipments.map((equipment, index) => (
+                <div key={index}>{equipment}</div>
+              ))}
+              <div className="appartement-contents-dropdowns-equipments-title">
+                Equipements
+                <div
+                  className={`appartement-contents-dropdowns-equipments-title-chevron ${
+                    isOpenEquipments ? "rotate" : "rotate-reverse"
+                  }`}
+                  onClick={() => setIsOpenEquipments(!isOpenEquipments)}
+                >
+                  <img
+                    src={chevron}
+                    alt="Chevron qui permettra l'ouverture et la fermeture du collapse"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

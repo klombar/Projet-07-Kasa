@@ -3,6 +3,7 @@
 * {
   list-style-type: none;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 html,
@@ -139,7 +140,6 @@ h6 {
   align-items: center;
   padding: 50px 0;
   margin-top: 35px;
-  margin-bottom: 35px;
   background-color: #f6f6f6;
 }
 .gallery-appartement {
@@ -179,6 +179,7 @@ h6 {
   max-width: 1440px;
   height: 209px;
   gap: 25px;
+  margin-top: 35px;
 }
 .footer-logo {
   display: flex;
@@ -326,17 +327,23 @@ h6 {
 .appartement {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 .appartement-contents {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
+  width: 100%;
+  max-width: 1240px;
   gap: 10px;
 }
 .appartement-contents-header {
   display: flex;
   justify-content: space-between;
+  max-width: 1240px;
+  width: 100%;
 }
 .appartement-contents-header-titles-title {
   font-family: Montserrat;
@@ -376,6 +383,8 @@ h6 {
 .appartement-contents-helper {
   display: flex;
   justify-content: space-between;
+  max-width: 1240px;
+  width: 100%;
 }
 .appartement-contents-helper-tags {
   display: flex;
@@ -396,4 +405,118 @@ h6 {
 }
 .appartement-contents-helper-rating {
   display: flex;
+}
+.appartement-contents-dropdowns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1240px;
+}
+.appartement-contents-dropdowns-description {
+  max-width: 582px;
+}
+.appartement-contents-dropdowns-description-content {
+  display: flex;
+  position: relative;
+  padding: 60px 15px 0 15px;
+  height: 28vh;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.67px;
+  text-align: left;
+  background-color: rgba(246, 246, 246, 0.4509803922);
+  overflow: hidden;
+  transition: height 0.3s ease, transform 0.3s ease;
+}
+.appartement-contents-dropdowns-description-content.expand {
+  height: 28vh;
+}
+.appartement-contents-dropdowns-description-content.unexpand {
+  transform: translateY(0%);
+  height: 0;
+}
+.appartement-contents-dropdowns-description-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  padding: 10px 15px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 582px;
+  background-color: #ff6060;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.67px;
+  text-align: left;
+  color: white;
+  border-radius: 10px;
+}
+.appartement-contents-dropdowns-description-title-chevron {
+  transition: transform 0.25s linear;
+  cursor: pointer;
+}
+.appartement-contents-dropdowns-description-title-chevron.rotate {
+  transform: rotate(-180deg);
+}
+.appartement-contents-dropdowns-description-title-chevron.rotate-reverse {
+  transform: rotate(0deg);
+}
+.appartement-contents-dropdowns-equipments {
+  max-width: 582px;
+  width: 100%;
+}
+.appartement-contents-dropdowns-equipments-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 60px 15px 0 15px;
+  height: 28vh;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25.67px;
+  text-align: left;
+  background-color: rgba(246, 246, 246, 0.4509803922);
+  overflow: hidden;
+  transition: height 0.3s ease, transform 0.3s ease;
+}
+.appartement-contents-dropdowns-equipments-content.expand {
+  height: 28vh;
+}
+.appartement-contents-dropdowns-equipments-content.unexpand {
+  transform: translateY(0%);
+  height: 0;
+}
+.appartement-contents-dropdowns-equipments-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  padding: 10px 15px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 582px;
+  background-color: #ff6060;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 25.67px;
+  text-align: left;
+  color: white;
+  border-radius: 10px;
+}
+.appartement-contents-dropdowns-equipments-title-chevron {
+  transition: transform 0.25s linear;
+  cursor: pointer;
+}
+.appartement-contents-dropdowns-equipments-title-chevron.rotate {
+  transform: rotate(-180deg);
+}
+.appartement-contents-dropdowns-equipments-title-chevron.rotate-reverse {
+  transform: rotate(0deg);
 }/*# sourceMappingURL=style.css.map */

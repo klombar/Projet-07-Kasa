@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 export default function Appartement(props) {
@@ -11,3 +12,9 @@ export default function Appartement(props) {
     </Link>
   );
 }
+
+Appartement.propTypes = {
+  id: PropTypes.string.isRequired,
+  cover: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};

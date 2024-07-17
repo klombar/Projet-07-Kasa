@@ -17,7 +17,6 @@ function App() {
           <Route
             path="/AppartementContent/:id"
             element={<AppartementContent />}
-            exact
           />
           <Route path="*" element={<Error404 />} />
         </Routes>

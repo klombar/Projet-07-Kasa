@@ -3,7 +3,6 @@ import chevron from "../assets/Images/aboutListChevron.png";
 
 export default function Dropdown() {
   const [data, setData] = useState([]);
-
   const [openIndex, setOpenIndex] = useState(null);
 
   function toogleCollapse(index) {

@@ -326,11 +326,13 @@ h6 {
 .appartement {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 .appartement-contents {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
 }
 .appartement-contents-header {
   display: flex;
@@ -352,7 +354,6 @@ h6 {
   text-align: left;
 }
 .appartement-contents-header-host {
-  border: 1px solid black;
   display: flex;
   gap: 10px;
 }
@@ -374,10 +375,11 @@ h6 {
 }
 .appartement-contents-helper {
   display: flex;
-  border: 1px solid black;
+  justify-content: space-between;
 }
 .appartement-contents-helper-tags {
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 .appartement-contents-helper-tags-tag {
@@ -391,4 +393,7 @@ h6 {
   font-weight: 700;
   line-height: 19.96px;
   text-align: center;
+}
+.appartement-contents-helper-rating {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */

@@ -338,10 +338,12 @@ h6 {
 .appartement {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   &-contents {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
     &-header {
       display: flex;
       justify-content: space-between;
@@ -363,7 +365,6 @@ h6 {
         }
       }
       &-host {
-        border: 1px solid black;
         display: flex;
         gap: 10px;
         &-name {
@@ -386,9 +387,10 @@ h6 {
     }
     &-helper {
       display: flex;
-      border: 1px solid black;
+      justify-content: space-between;
       &-tags {
         display: flex;
+        align-items: center;
         gap: 5px;
         &-tag {
           color: white;
@@ -402,6 +404,9 @@ h6 {
           line-height: 19.96px;
           text-align: center;
         }
+      }
+      &-rating {
+        display: flex;
       }
     }
   }

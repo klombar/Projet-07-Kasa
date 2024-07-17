@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import Appartement from "./Appartement";
-import AppartementContent from "./AppartementContent";
-import Carrousel from "./Carrousel";
 
 export default function Gallery() {
   const [data, setData] = useState([]);

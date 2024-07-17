@@ -6,17 +6,16 @@ import { useEffect, useState } from "react";
 import starFull from "../assets/Images/star-full.png";
 import starVoid from "../assets/Images/star-void.png";
 import Error404 from "../pages/Error404";
+import data from "../data/logements.json";
 
 // Composant  qui s'affiche quand on clique sur l'image d'un appartement dans la page HOME avec les data du fichier logement.json en paramètres;
-export default function AppartementContent({ data }) {
+export default function AppartementContent() {
   const { id } = useParams(); //Récupération de l'ID via la déstructuration de la pair clef/valeur retourné par useParams();
   const [appartement, setAppartement] = useState(null);
 
-  /* utilisation de useEffect pour relancer l'effet si il y a une modification de id ou data */
   useEffect(() => {
-    //logique encapsulée dans fonction pour meilleur réutilisabilité;
     const getAppartementData = () => {
-      //Utilisation de la methode find() pour trouver dans les data l'ID des données qui correspond a l'ID de l'URL
+      //Utilisation de la methode find() pour trouver dans les data l'ID des données qui correspond a l'ID de l'URL.
       const clickedAppartement = data.find((app) => app.id === id);
 
       //Condition qui met a jour la variable appartement, si clickedAppartement == true (si un id correspondant a l'ID de la page a été trouvé dans data);
@@ -28,14 +27,15 @@ export default function AppartementContent({ data }) {
     };
 
     getAppartementData();
-  }, [id, data]); //L'effet est déclenché chaque fois que "id" ou "data" change;
+  }, [id]); //L'effet est déclenché chaque fois que "id" ou "data" change;
 
-  /* Si appartement = falsy, alors on affiche la page error404 via son composant */
   if (!appartement) {
     return <Error404 />;
   }
 
-  const rating = parseInt(appartement.rating);
+  const rating = parseInt(appartement.rating); // conversion en nombre entier de la notation des appartements en nombre sous forme de string;
+  /* Création d'un nouveau tableau de  éléments avec la méthode array.from() & une logique permettant d'afficher 
+  la notation sous forme d'etoiles pleine ou vide selon l'appartement.*/
   const ratingArray = Array.from({ length: 5 }, (_, index) =>
     index < rating ? starFull : starVoid
   );
@@ -76,8 +76,8 @@ export default function AppartementContent({ data }) {
           </div>
           <div className="appartement-contents-helper-rating">
             {ratingArray.map((star, index) => (
-              <div key={star}>
-                <img key={index} src={star} alt="star" />
+              <div key={index}>
+                <img src={star} alt="star" />
               </div>
             ))}
           </div>

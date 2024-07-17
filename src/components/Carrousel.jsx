@@ -1,7 +1,7 @@
 import leftArrow from "../assets/Images/left-arrow.png";
 import rightArrow from "../assets/Images/right-arrow.png";
 
-export default function carrousel(props) {
+export default function carrousel() {
   return (
     <>
       <div className="carrousel">

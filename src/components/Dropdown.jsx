@@ -3,7 +3,12 @@ import chevron from "../assets/Images/aboutListChevron.png";
 
 export default function Dropdown() {
   const [data, setData] = useState([]);
-  const [activeIndexes, setActiveIndexes] = useState([]);
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  function toogleCollapse(index) {
+    setOpenIndex(openIndex === index ? null : index);
+  }
 
   useEffect(() => {
     fetchData();
@@ -19,26 +24,18 @@ export default function Dropdown() {
     }
   }
 
-  function handleItemClick(index) {
-    setActiveIndexes((activeIndex) =>
-      activeIndex.includes(index)
-        ? activeIndex.filter((i) => i !== index)
-        : [...activeIndex, index]
-    );
-  }
-
   return (
     <>
       <ul className="dropdown">
         {data.map((collapse, index) => (
           <React.Fragment key={index}>
-            <li className="about-list">
+            <li key={index} className="about-list">
               {collapse.aboutTitle}
               <span
                 className={`about-list-chevron ${
-                  activeIndexes.includes(index) ? "rotate" : "rotate-reverse"
+                  openIndex === index ? "rotate" : "rotate-reverse"
                 }`}
-                onClick={() => handleItemClick(index)}
+                onClick={() => toogleCollapse(index)}
               >
                 <img src={chevron} alt="chevron" />
               </span>
@@ -46,7 +43,7 @@ export default function Dropdown() {
             <div className="wrapper">
               <div
                 className={`about-list-content ${
-                  activeIndexes.includes(index) ? "expand" : "unexpand"
+                  openIndex === index ? "expand" : "unexpand"
                 }`}
               >
                 {collapse.aboutText}

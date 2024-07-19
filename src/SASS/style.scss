@@ -379,12 +379,19 @@ h6 {
   max-width: 1240px;
   height: 415px;
   position: relative;
+  @media (max-width: 375px) {
+    height: 255px;
+  }
   &-current-image {
     object-fit: cover;
     width: 100%;
     max-width: 1240px;
     height: 415px;
     border-radius: 25px;
+    @media (max-width: 375px) {
+      height: 255px;
+      border-radius: 10px;
+    }
   }
   &-left-arrow {
     position: absolute;
@@ -392,6 +399,10 @@ h6 {
     left: 15px;
     max-width: 96px;
     max-height: 120px;
+    @media (max-width: 375px) {
+      top: 110px;
+      max-width: 15px;
+    }
   }
   &-right-arrow {
     position: absolute;
@@ -399,6 +410,10 @@ h6 {
     right: 15px;
     max-width: 96px;
     max-height: 120px;
+    @media (max-width: 375px) {
+      top: 110px;
+      max-width: 15px;
+    }
   }
   &-indicator {
     position: absolute;
@@ -420,11 +435,15 @@ h6 {
   width: 100%;
   max-width: 1240px;
   gap: 20px;
+  @media (max-width: 375px) {
+    padding: 0px 20px;
+  }
   &-contents {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: relative;
     width: 100%;
     max-width: 1240px;
     gap: 10px;
@@ -441,6 +460,13 @@ h6 {
           line-height: 51.34px;
           text-align: left;
           color: $primary-color;
+          @media (max-width: 375px) {
+            font-family: Montserrat;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 25.67px;
+            text-align: left;
+          }
         }
         &-subtitles {
           font-family: Montserrat;
@@ -453,6 +479,11 @@ h6 {
       &-host {
         display: flex;
         gap: 10px;
+        @media (max-width: 375px) {
+          position: absolute;
+          top: 75px;
+          right: 0px;
+        }
         &-name {
           display: flex;
           align-items: center;
@@ -462,12 +493,23 @@ h6 {
           line-height: 25.67px;
           text-align: right;
           color: $primary-color;
+          @media (max-width: 375px) {
+            font-family: Montserrat;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 17.11px;
+            text-align: right;
+          }
         }
         &-image img {
           width: 100%;
           max-width: 64px;
           height: 64px;
           border-radius: 65px;
+          @media (max-width: 375px) {
+            max-width: 32px;
+            height: 32px;
+          }
         }
       }
     }
@@ -476,11 +518,18 @@ h6 {
       justify-content: space-between;
       max-width: 1240px;
       width: 100%;
+      @media (max-width: 375px) {
+        flex-direction: column;
+        gap: 15px;
+      }
       &-tags {
         display: flex;
         align-items: center;
         gap: 5px;
         &-tag {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color: white;
           background-color: $primary-color;
           border-radius: 15px;
@@ -491,10 +540,25 @@ h6 {
           font-weight: 700;
           line-height: 19.96px;
           text-align: center;
+          @media (max-width: 375px) {
+            font-family: Montserrat;
+            font-size: 10px;
+            font-weight: 700;
+            line-height: 14.26px;
+            text-align: center;
+          }
         }
       }
       &-rating {
         display: flex;
+        @media (max-width: 375px) {
+          margin-bottom: 10px;
+        }
+        & img {
+          @media (max-width: 375px) {
+            width: 13px;
+          }
+        }
       }
     }
     &-dropdowns {
@@ -502,6 +566,10 @@ h6 {
       justify-content: space-between;
       width: 100%;
       max-width: 1240px;
+      @media (max-width: 375px) {
+        flex-direction: column;
+        gap: 20px;
+      }
       &-description {
         max-width: 582px;
         &-content {
@@ -544,6 +612,13 @@ h6 {
           text-align: left;
           color: white;
           border-radius: 10px;
+          @media (max-width: 375px) {
+            font-family: Montserrat;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 18.54px;
+            text-align: left;
+          }
           &-chevron {
             transition: transform 0.25s linear;
             cursor: pointer;
@@ -552,6 +627,11 @@ h6 {
             }
             &.rotate-reverse {
               transform: rotate(0deg);
+            }
+            & img {
+              @media (max-width: 375px) {
+                width: 16px;
+              }
             }
           }
         }
@@ -602,6 +682,13 @@ h6 {
           text-align: left;
           color: white;
           border-radius: 10px;
+          @media (max-width: 375px) {
+            font-family: Montserrat;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 18.54px;
+            text-align: left;
+          }
           &-chevron {
             transition: transform 0.25s linear;
             cursor: pointer;
@@ -610,6 +697,11 @@ h6 {
             }
             &.rotate-reverse {
               transform: rotate(0deg);
+            }
+            & img {
+              @media (max-width: 375px) {
+                width: 16px;
+              }
             }
           }
         }

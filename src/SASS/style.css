@@ -396,6 +396,11 @@ h6 {
   height: 415px;
   position: relative;
 }
+@media (max-width: 375px) {
+  .carrousel {
+    height: 255px;
+  }
+}
 .carrousel-current-image {
   -o-object-fit: cover;
      object-fit: cover;
@@ -404,6 +409,12 @@ h6 {
   height: 415px;
   border-radius: 25px;
 }
+@media (max-width: 375px) {
+  .carrousel-current-image {
+    height: 255px;
+    border-radius: 10px;
+  }
+}
 .carrousel-left-arrow {
   position: absolute;
   top: 160px;
@@ -411,12 +422,24 @@ h6 {
   max-width: 96px;
   max-height: 120px;
 }
+@media (max-width: 375px) {
+  .carrousel-left-arrow {
+    top: 110px;
+    max-width: 15px;
+  }
+}
 .carrousel-right-arrow {
   position: absolute;
   top: 160px;
   right: 15px;
   max-width: 96px;
   max-height: 120px;
+}
+@media (max-width: 375px) {
+  .carrousel-right-arrow {
+    top: 110px;
+    max-width: 15px;
+  }
 }
 .carrousel-indicator {
   position: absolute;
@@ -438,11 +461,17 @@ h6 {
   max-width: 1240px;
   gap: 20px;
 }
+@media (max-width: 375px) {
+  .appartement {
+    padding: 0px 20px;
+  }
+}
 .appartement-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  position: relative;
   width: 100%;
   max-width: 1240px;
   gap: 10px;
@@ -461,6 +490,15 @@ h6 {
   text-align: left;
   color: #ff6060;
 }
+@media (max-width: 375px) {
+  .appartement-contents-header-titles-title {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.67px;
+    text-align: left;
+  }
+}
 .appartement-contents-header-titles-subtitles {
   font-family: Montserrat;
   font-size: 18px;
@@ -472,6 +510,13 @@ h6 {
   display: flex;
   gap: 10px;
 }
+@media (max-width: 375px) {
+  .appartement-contents-header-host {
+    position: absolute;
+    top: 75px;
+    right: 0px;
+  }
+}
 .appartement-contents-header-host-name {
   display: flex;
   align-items: center;
@@ -482,11 +527,26 @@ h6 {
   text-align: right;
   color: #ff6060;
 }
+@media (max-width: 375px) {
+  .appartement-contents-header-host-name {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17.11px;
+    text-align: right;
+  }
+}
 .appartement-contents-header-host-image img {
   width: 100%;
   max-width: 64px;
   height: 64px;
   border-radius: 65px;
+}
+@media (max-width: 375px) {
+  .appartement-contents-header-host-image img {
+    max-width: 32px;
+    height: 32px;
+  }
 }
 .appartement-contents-helper {
   display: flex;
@@ -494,12 +554,21 @@ h6 {
   max-width: 1240px;
   width: 100%;
 }
+@media (max-width: 375px) {
+  .appartement-contents-helper {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
 .appartement-contents-helper-tags {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 .appartement-contents-helper-tags-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   background-color: #ff6060;
   border-radius: 15px;
@@ -511,14 +580,39 @@ h6 {
   line-height: 19.96px;
   text-align: center;
 }
+@media (max-width: 375px) {
+  .appartement-contents-helper-tags-tag {
+    font-family: Montserrat;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14.26px;
+    text-align: center;
+  }
+}
 .appartement-contents-helper-rating {
   display: flex;
+}
+@media (max-width: 375px) {
+  .appartement-contents-helper-rating {
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 375px) {
+  .appartement-contents-helper-rating img {
+    width: 13px;
+  }
 }
 .appartement-contents-dropdowns {
   display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 1240px;
+}
+@media (max-width: 375px) {
+  .appartement-contents-dropdowns {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 .appartement-contents-dropdowns-description {
   max-width: 582px;
@@ -564,6 +658,15 @@ h6 {
   color: white;
   border-radius: 10px;
 }
+@media (max-width: 375px) {
+  .appartement-contents-dropdowns-description-title {
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18.54px;
+    text-align: left;
+  }
+}
 .appartement-contents-dropdowns-description-title-chevron {
   transition: transform 0.25s linear;
   cursor: pointer;
@@ -573,6 +676,11 @@ h6 {
 }
 .appartement-contents-dropdowns-description-title-chevron.rotate-reverse {
   transform: rotate(0deg);
+}
+@media (max-width: 375px) {
+  .appartement-contents-dropdowns-description-title-chevron img {
+    width: 16px;
+  }
 }
 .appartement-contents-dropdowns-equipments {
   max-width: 582px;
@@ -622,6 +730,15 @@ h6 {
   color: white;
   border-radius: 10px;
 }
+@media (max-width: 375px) {
+  .appartement-contents-dropdowns-equipments-title {
+    font-family: Montserrat;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18.54px;
+    text-align: left;
+  }
+}
 .appartement-contents-dropdowns-equipments-title-chevron {
   transition: transform 0.25s linear;
   cursor: pointer;
@@ -631,4 +748,9 @@ h6 {
 }
 .appartement-contents-dropdowns-equipments-title-chevron.rotate-reverse {
   transform: rotate(0deg);
+}
+@media (max-width: 375px) {
+  .appartement-contents-dropdowns-equipments-title-chevron img {
+    width: 16px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -37,13 +37,11 @@ export default function AppartementContent() {
     index < rating ? starFull : starVoid
   );
 
-  const { tags, equipments } = appartement;
+  const { tags, equipments, pictures } = appartement;
 
   return (
     <div className="appartement">
-      <div className="appartement-carrousel">
-        <Carrousel />
-      </div>
+      <Carrousel pictures={pictures} />
       <div className="appartement-contents">
         <div className="appartement-contents-header">
           <div className="appartement-contents-header-titles">

@@ -240,7 +240,7 @@ h6 {
   height: 209px;
   gap: 25px;
   margin-top: 35px;
-  @media (max-width: 375px) {
+  @media (max-width: 480px) {
     margin-top: 30px;
     justify-content: center;
     gap: 0;
@@ -257,7 +257,7 @@ h6 {
     font-weight: 500;
     line-height: 34.22px;
     text-align: center;
-    @media (max-width: 375px) {
+    @media (max-width: 480px) {
       max-width: 133px;
       font-family: Montserrat;
       font-size: 12px;
@@ -324,16 +324,21 @@ h6 {
       margin-top: 30px;
     }
     &-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       max-width: 1023px;
-      background-color: rgba(246, 246, 246, 0.4509803922);
+      background-color: rgba(246, 246, 246);
       font-family: Montserrat;
-      line-height: 25px;
+      line-height: 22px;
       font-size: 19px;
       font-weight: 400;
       text-align: left;
       color: black;
-      transition: height 0.2s ease, transform 0.2s ease, padding 0.3s ease;
+      transition: height 0.3s ease, padding 0.3s ease;
       overflow: hidden;
+      height: 0;
+      padding: 0px 15px;
     }
     &-chevron {
       transition: transform 0.25s linear;
@@ -350,14 +355,11 @@ h6 {
 
 .about-list-content.expand {
   height: auto;
-  transform: translateY(0);
   padding: 15px 15px;
 }
 
 .about-list-content.unexpand {
-  transform: translateY(-100%);
-  height: 0;
-  padding: 0px;
+  height: 0px;
 }
 
 .wrapper {
@@ -379,7 +381,7 @@ h6 {
   max-width: 1240px;
   height: 415px;
   position: relative;
-  @media (max-width: 375px) {
+  @media (max-width: 480px) {
     height: 255px;
   }
   &-current-image {
@@ -388,31 +390,33 @@ h6 {
     max-width: 1240px;
     height: 415px;
     border-radius: 25px;
-    @media (max-width: 375px) {
+    @media (max-width: 480px) {
       height: 255px;
       border-radius: 10px;
     }
   }
   &-left-arrow {
     position: absolute;
-    top: 160px;
+    top: 170px;
     left: 15px;
-    max-width: 96px;
+    max-width: 4vw;
     max-height: 120px;
-    @media (max-width: 375px) {
+    @media (max-width: 480px) {
       top: 110px;
-      max-width: 15px;
+      max-width: 4vw;
+    }
+    @media (min-width: 376px) and (max-width: 480px) {
     }
   }
   &-right-arrow {
     position: absolute;
-    top: 160px;
+    top: 170px;
     right: 15px;
-    max-width: 96px;
+    max-width: 4vw;
     max-height: 120px;
-    @media (max-width: 375px) {
+    @media (max-width: 480px) {
       top: 110px;
-      max-width: 15px;
+      max-width: 4vw;
     }
   }
   &-indicator {
@@ -425,6 +429,9 @@ h6 {
     line-height: 25.67px;
     text-align: center;
     color: white;
+    @media (max-width: 480px) {
+      left: 48%;
+    }
   }
 }
 
@@ -435,9 +442,7 @@ h6 {
   width: 100%;
   max-width: 1240px;
   gap: 20px;
-  @media (max-width: 375px) {
-    padding: 0px 20px;
-  }
+  padding: 0px 20px;
   &-contents {
     display: flex;
     flex-direction: column;
@@ -460,7 +465,7 @@ h6 {
           line-height: 51.34px;
           text-align: left;
           color: $primary-color;
-          @media (max-width: 375px) {
+          @media (max-width: 480px) {
             font-family: Montserrat;
             font-size: 18px;
             font-weight: 500;
@@ -481,24 +486,20 @@ h6 {
         gap: 10px;
         @media (max-width: 375px) {
           position: absolute;
-          top: 75px;
+          top: 82px;
           right: 0px;
         }
         &-name {
           display: flex;
           align-items: center;
           font-family: Montserrat;
-          font-size: 18px;
+          font-size: 1.2em;
           font-weight: 500;
           line-height: 25.67px;
           text-align: right;
           color: $primary-color;
-          @media (max-width: 375px) {
-            font-family: Montserrat;
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 17.11px;
-            text-align: right;
+          @media (max-width: 480px) {
+            font-size: 0.85em;
           }
         }
         &-image img {
@@ -522,10 +523,21 @@ h6 {
         flex-direction: column;
         gap: 15px;
       }
+      @media (min-width: 376px) and (max-width: 768px) {
+        flex-direction: column;
+        gap: 7px;
+      }
       &-tags {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 3px;
+        @media (max-width: 375px) {
+          max-width: 335px;
+          margin-bottom: 5px;
+        }
+        @media (min-width: 376px) and (max-width: 480px) {
+          flex-wrap: wrap;
+        }
         &-tag {
           display: flex;
           justify-content: center;
@@ -533,7 +545,7 @@ h6 {
           color: white;
           background-color: $primary-color;
           border-radius: 15px;
-          padding: 0px 15px 0px 15px;
+          padding: 0px 10px 0px 10px;
           height: 20px;
           font-family: Montserrat;
           font-size: 14px;
@@ -556,7 +568,7 @@ h6 {
         }
         & img {
           @media (max-width: 375px) {
-            width: 13px;
+            width: 18px;
           }
         }
       }
@@ -566,17 +578,19 @@ h6 {
       justify-content: space-between;
       width: 100%;
       max-width: 1240px;
-      @media (max-width: 375px) {
+      gap: 15px;
+      @media (max-width: 480px) {
         flex-direction: column;
-        gap: 20px;
       }
       &-description {
+        width: 100%;
         max-width: 582px;
         &-content {
           display: flex;
+          justify-content: center;
+          align-items: center;
           position: relative;
-          padding: 60px 15px 0 15px;
-          height: 28vh;
+          padding: 40px 15px 0 15px;
           font-family: Montserrat;
           font-size: 18px;
           font-weight: 400;
@@ -585,9 +599,18 @@ h6 {
           background-color: rgba(246, 246, 246, 0.4509803922);
           overflow: hidden;
           transition: height 0.3s ease, transform 0.3s ease;
+          height: 40px;
+          @media (max-width: 480px) {
+            font-family: Montserrat;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 17.11px;
+            text-align: left;
+          }
           &.expand {
-            height: 28vh;
+            height: 21vh;
             align-items: center;
+            gap: 5px;
           }
           &.unexpand {
             transform: translateY(0%);
@@ -599,7 +622,7 @@ h6 {
           align-items: center;
           justify-content: space-between;
           position: absolute;
-          padding: 10px 15px;
+          padding: 1px 15px;
           top: 0;
           left: 0;
           width: 100%;
@@ -612,7 +635,8 @@ h6 {
           text-align: left;
           color: white;
           border-radius: 10px;
-          @media (max-width: 375px) {
+          @media (max-width: 480px) {
+            padding: 10px 15px;
             font-family: Montserrat;
             font-size: 13px;
             font-weight: 700;
@@ -629,7 +653,7 @@ h6 {
               transform: rotate(0deg);
             }
             & img {
-              @media (max-width: 375px) {
+              @media (max-width: 480px) {
                 width: 16px;
               }
             }
@@ -642,21 +666,29 @@ h6 {
         &-content {
           display: flex;
           flex-direction: column;
+          justify-content: center;
           position: relative;
-          padding: 60px 15px 0 15px;
+          padding: 40px 15px 0 15px;
           height: 28vh;
           font-family: Montserrat;
           font-size: 18px;
           font-weight: 400;
-          line-height: 25.67px;
+          line-height: 24px;
           text-align: left;
           background-color: rgba(246, 246, 246, 0.4509803922);
           overflow: hidden;
           overflow-y: scroll;
           scrollbar-width: none;
           transition: height 0.3s ease, transform 0.3s ease;
+          @media (max-width: 480px) {
+            font-family: Montserrat;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 17.11px;
+            text-align: left;
+          }
           &.expand {
-            height: 28vh;
+            height: 21vh;
             justify-content: center;
           }
           &.unexpand {
@@ -669,7 +701,7 @@ h6 {
           align-items: center;
           justify-content: space-between;
           position: absolute;
-          padding: 10px 15px;
+          padding: 1px 15px;
           top: 0;
           left: 0;
           width: 100%;
@@ -682,7 +714,8 @@ h6 {
           text-align: left;
           color: white;
           border-radius: 10px;
-          @media (max-width: 375px) {
+          @media (max-width: 480px) {
+            padding: 10px 15px;
             font-family: Montserrat;
             font-size: 13px;
             font-weight: 700;
@@ -699,7 +732,7 @@ h6 {
               transform: rotate(0deg);
             }
             & img {
-              @media (max-width: 375px) {
+              @media (max-width: 480px) {
                 width: 16px;
               }
             }

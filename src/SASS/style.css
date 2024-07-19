@@ -253,7 +253,7 @@ h6 {
   gap: 25px;
   margin-top: 35px;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .footer {
     margin-top: 30px;
     justify-content: center;
@@ -273,7 +273,7 @@ h6 {
   line-height: 34.22px;
   text-align: center;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .footer-copyright {
     max-width: 133px;
     font-family: Montserrat;
@@ -343,16 +343,21 @@ h6 {
   }
 }
 .dropdown .about-list-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: 1023px;
-  background-color: rgba(246, 246, 246, 0.4509803922);
+  background-color: rgb(246, 246, 246);
   font-family: Montserrat;
-  line-height: 25px;
+  line-height: 22px;
   font-size: 19px;
   font-weight: 400;
   text-align: left;
   color: black;
-  transition: height 0.2s ease, transform 0.2s ease, padding 0.3s ease;
+  transition: height 0.3s ease, padding 0.3s ease;
   overflow: hidden;
+  height: 0;
+  padding: 0px 15px;
 }
 .dropdown .about-list-chevron {
   transition: transform 0.25s linear;
@@ -367,14 +372,11 @@ h6 {
 
 .about-list-content.expand {
   height: auto;
-  transform: translateY(0);
   padding: 15px 15px;
 }
 
 .about-list-content.unexpand {
-  transform: translateY(-100%);
-  height: 0;
-  padding: 0px;
+  height: 0px;
 }
 
 .wrapper {
@@ -396,7 +398,7 @@ h6 {
   height: 415px;
   position: relative;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .carrousel {
     height: 255px;
   }
@@ -409,7 +411,7 @@ h6 {
   height: 415px;
   border-radius: 25px;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .carrousel-current-image {
     height: 255px;
     border-radius: 10px;
@@ -417,28 +419,28 @@ h6 {
 }
 .carrousel-left-arrow {
   position: absolute;
-  top: 160px;
+  top: 170px;
   left: 15px;
-  max-width: 96px;
+  max-width: 4vw;
   max-height: 120px;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .carrousel-left-arrow {
     top: 110px;
-    max-width: 15px;
+    max-width: 4vw;
   }
 }
 .carrousel-right-arrow {
   position: absolute;
-  top: 160px;
+  top: 170px;
   right: 15px;
-  max-width: 96px;
+  max-width: 4vw;
   max-height: 120px;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .carrousel-right-arrow {
     top: 110px;
-    max-width: 15px;
+    max-width: 4vw;
   }
 }
 .carrousel-indicator {
@@ -452,6 +454,11 @@ h6 {
   text-align: center;
   color: white;
 }
+@media (max-width: 480px) {
+  .carrousel-indicator {
+    left: 48%;
+  }
+}
 
 .appartement {
   display: flex;
@@ -460,11 +467,7 @@ h6 {
   width: 100%;
   max-width: 1240px;
   gap: 20px;
-}
-@media (max-width: 375px) {
-  .appartement {
-    padding: 0px 20px;
-  }
+  padding: 0px 20px;
 }
 .appartement-contents {
   display: flex;
@@ -490,7 +493,7 @@ h6 {
   text-align: left;
   color: #ff6060;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-header-titles-title {
     font-family: Montserrat;
     font-size: 18px;
@@ -513,7 +516,7 @@ h6 {
 @media (max-width: 375px) {
   .appartement-contents-header-host {
     position: absolute;
-    top: 75px;
+    top: 82px;
     right: 0px;
   }
 }
@@ -521,19 +524,15 @@ h6 {
   display: flex;
   align-items: center;
   font-family: Montserrat;
-  font-size: 18px;
+  font-size: 1.2em;
   font-weight: 500;
   line-height: 25.67px;
   text-align: right;
   color: #ff6060;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-header-host-name {
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 17.11px;
-    text-align: right;
+    font-size: 0.85em;
   }
 }
 .appartement-contents-header-host-image img {
@@ -560,10 +559,27 @@ h6 {
     gap: 15px;
   }
 }
+@media (min-width: 376px) and (max-width: 768px) {
+  .appartement-contents-helper {
+    flex-direction: column;
+    gap: 7px;
+  }
+}
 .appartement-contents-helper-tags {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
+}
+@media (max-width: 375px) {
+  .appartement-contents-helper-tags {
+    max-width: 335px;
+    margin-bottom: 5px;
+  }
+}
+@media (min-width: 376px) and (max-width: 480px) {
+  .appartement-contents-helper-tags {
+    flex-wrap: wrap;
+  }
 }
 .appartement-contents-helper-tags-tag {
   display: flex;
@@ -572,7 +588,7 @@ h6 {
   color: white;
   background-color: #ff6060;
   border-radius: 15px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 10px 0px 10px;
   height: 20px;
   font-family: Montserrat;
   font-size: 14px;
@@ -599,7 +615,7 @@ h6 {
 }
 @media (max-width: 375px) {
   .appartement-contents-helper-rating img {
-    width: 13px;
+    width: 18px;
   }
 }
 .appartement-contents-dropdowns {
@@ -607,21 +623,23 @@ h6 {
   justify-content: space-between;
   width: 100%;
   max-width: 1240px;
+  gap: 15px;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-dropdowns {
     flex-direction: column;
-    gap: 20px;
   }
 }
 .appartement-contents-dropdowns-description {
+  width: 100%;
   max-width: 582px;
 }
 .appartement-contents-dropdowns-description-content {
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  padding: 60px 15px 0 15px;
-  height: 28vh;
+  padding: 40px 15px 0 15px;
   font-family: Montserrat;
   font-size: 18px;
   font-weight: 400;
@@ -630,10 +648,21 @@ h6 {
   background-color: rgba(246, 246, 246, 0.4509803922);
   overflow: hidden;
   transition: height 0.3s ease, transform 0.3s ease;
+  height: 40px;
+}
+@media (max-width: 480px) {
+  .appartement-contents-dropdowns-description-content {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17.11px;
+    text-align: left;
+  }
 }
 .appartement-contents-dropdowns-description-content.expand {
-  height: 28vh;
+  height: 21vh;
   align-items: center;
+  gap: 5px;
 }
 .appartement-contents-dropdowns-description-content.unexpand {
   transform: translateY(0%);
@@ -644,7 +673,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  padding: 10px 15px;
+  padding: 1px 15px;
   top: 0;
   left: 0;
   width: 100%;
@@ -658,8 +687,9 @@ h6 {
   color: white;
   border-radius: 10px;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-dropdowns-description-title {
+    padding: 10px 15px;
     font-family: Montserrat;
     font-size: 13px;
     font-weight: 700;
@@ -677,7 +707,7 @@ h6 {
 .appartement-contents-dropdowns-description-title-chevron.rotate-reverse {
   transform: rotate(0deg);
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-dropdowns-description-title-chevron img {
     width: 16px;
   }
@@ -689,13 +719,14 @@ h6 {
 .appartement-contents-dropdowns-equipments-content {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   position: relative;
-  padding: 60px 15px 0 15px;
+  padding: 40px 15px 0 15px;
   height: 28vh;
   font-family: Montserrat;
   font-size: 18px;
   font-weight: 400;
-  line-height: 25.67px;
+  line-height: 24px;
   text-align: left;
   background-color: rgba(246, 246, 246, 0.4509803922);
   overflow: hidden;
@@ -703,8 +734,17 @@ h6 {
   scrollbar-width: none;
   transition: height 0.3s ease, transform 0.3s ease;
 }
+@media (max-width: 480px) {
+  .appartement-contents-dropdowns-equipments-content {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17.11px;
+    text-align: left;
+  }
+}
 .appartement-contents-dropdowns-equipments-content.expand {
-  height: 28vh;
+  height: 21vh;
   justify-content: center;
 }
 .appartement-contents-dropdowns-equipments-content.unexpand {
@@ -716,7 +756,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  padding: 10px 15px;
+  padding: 1px 15px;
   top: 0;
   left: 0;
   width: 100%;
@@ -730,8 +770,9 @@ h6 {
   color: white;
   border-radius: 10px;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-dropdowns-equipments-title {
+    padding: 10px 15px;
     font-family: Montserrat;
     font-size: 13px;
     font-weight: 700;
@@ -749,7 +790,7 @@ h6 {
 .appartement-contents-dropdowns-equipments-title-chevron.rotate-reverse {
   transform: rotate(0deg);
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-dropdowns-equipments-title-chevron img {
     width: 16px;
   }

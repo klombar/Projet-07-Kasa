@@ -3,11 +3,15 @@ import chevron from "../assets/Images/aboutListChevron.png";
 
 export default function Dropdown() {
   const [data, setData] = useState([]);
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndexes, setOpenIndexes] = useState([]);
 
-  function toogleCollapse(index) {
-    setOpenIndex(openIndex === index ? null : index);
-  }
+  const toggleCollapse = (index) => {
+    setOpenIndexes((prevOpenIndexes) =>
+      prevOpenIndexes.includes(index)
+        ? prevOpenIndexes.filter((i) => i !== index)
+        : [...prevOpenIndexes, index]
+    );
+  };
 
   useEffect(() => {
     fetchData();
@@ -28,25 +32,22 @@ export default function Dropdown() {
       <ul className="dropdown">
         {data.map((collapse, index) => (
           <React.Fragment key={index}>
-            <li key={index} className="about-list">
+            <li className="about-list" onClick={() => toggleCollapse(index)}>
               {collapse.aboutTitle}
               <span
                 className={`about-list-chevron ${
-                  openIndex === index ? "rotate" : "rotate-reverse"
+                  openIndexes.includes(index) ? "rotate" : "rotate-reverse"
                 }`}
-                onClick={() => toogleCollapse(index)}
               >
                 <img src={chevron} alt="chevron" />
               </span>
             </li>
-            <div className="wrapper">
-              <div
-                className={`about-list-content ${
-                  openIndex === index ? "expand" : "unexpand"
-                }`}
-              >
-                {collapse.aboutText}
-              </div>
+            <div
+              className={`about-list-content ${
+                openIndexes.includes(index) ? "expand" : "unexpand"
+              }`}
+            >
+              {collapse.aboutText}
             </div>
           </React.Fragment>
         ))}

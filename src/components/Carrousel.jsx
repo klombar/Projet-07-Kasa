@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import leftArrow from "../assets/Images/left-arrow.png";
 import rightArrow from "../assets/Images/right-arrow.png";
 
@@ -52,3 +53,7 @@ export default function Carrousel({ pictures }) {
     </>
   );
 }
+
+Carrousel.propTypes = {
+  pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

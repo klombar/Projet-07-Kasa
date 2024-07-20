@@ -1,65 +1,8 @@
-/* variables SASS */
-/* ******************************************************************* GENERAL ******************************************************************* */
-* {
-  list-style-type: none;
-  scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-a,
-Link {
-  text-decoration: none;
-  color: black;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-/* ********************************************************************* SASS *************************************************************** */
-/* ------------------------------------------------------------------- HOME ------------------------------------------------------------------ */
-/* classe permettant de souligner la navigation en fonction de la page sur laquelle nous sommes */
-.active {
-  text-decoration: underline;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.App {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-/* --------------------------------------------------------------------- HEADER ---------------------------------------------------------------------- */
+/* ******************************************************************* IMPORT ******************************************************************* */
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 1240px;
   margin: 35px 0px;
@@ -81,7 +24,6 @@ h6 {
   }
 }
 .header-nav li {
-  font-family: Montserrat;
   font-size: 4.5vw;
   font-weight: 500;
   line-height: 34.22px;
@@ -93,16 +35,53 @@ h6 {
   }
 }
 
-/* ------------------------------------------------------------------------ MAIN -------------------------------------------------------------------- */
-.Main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 1240px;
-  padding: 0px 20px;
+/* classe permettant de souligner la navigation en fonction de la page sur laquelle nous sommes */
+.active {
+  text-decoration: underline;
 }
 
-/* ---------------------------------------------------------------------- BANNER --------------------------------------------------------------------- */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  background-color: black;
+  width: 100%;
+  max-width: 1440px;
+  height: 209px;
+  gap: 25px;
+  margin-top: 35px;
+}
+@media (max-width: 480px) {
+  .footer {
+    margin-top: 30px;
+    justify-content: center;
+    gap: 0;
+    height: 262px;
+  }
+}
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-copyright {
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34.22px;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .footer-copyright {
+    max-width: 133px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17.11px;
+    text-align: center;
+  }
+}
+
 .banner {
   max-width: 1240px;
   position: relative;
@@ -160,10 +139,9 @@ h6 {
 .banner-title {
   display: flex;
   justify-content: center;
-  position: absolute;
   align-items: center;
+  position: absolute;
   inset: 25px;
-  font-family: Montserrat;
   font-size: 48px;
   font-weight: 700;
   text-align: left;
@@ -175,7 +153,6 @@ h6 {
   }
 }
 
-/* --------------------------------------------------------------------- GALLERY ---------------------------------------------------------------- */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 340px));
@@ -233,97 +210,21 @@ h6 {
   height: 52px;
   bottom: 0;
   left: 22px;
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 700;
-  line-height: 25.67px;
+  line-height: 20px;
   text-align: left;
 }
 
-/* ------------------------------------------------------------------------- FOOTER ---------------------------------------------------------------- */
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  align-items: center;
-  background-color: black;
-  width: 100%;
-  max-width: 1440px;
-  height: 209px;
-  gap: 25px;
-  margin-top: 35px;
-}
-@media (max-width: 480px) {
-  .footer {
-    margin-top: 30px;
-    justify-content: center;
-    gap: 0;
-    height: 262px;
-  }
-}
-.footer-logo {
-  display: flex;
-  justify-content: center;
-}
-.footer-copyright {
-  color: white;
-  font-family: Montserrat;
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 34.22px;
-  text-align: center;
-}
-@media (max-width: 480px) {
-  .footer-copyright {
-    max-width: 133px;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: 17.11px;
-    text-align: center;
-  }
-}
-
-/* ******************************************************************** PAGE 404 ERROR ***********************************************************/
-.error {
-  display: flex;
-  justify-content: center;
-  max-width: 650px;
-  height: 280px;
-  margin: 0;
-  color: #ff6060;
-}
-.error img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-.error-text {
-  font-family: Montserrat;
-  font-size: 36px;
-  font-weight: 500;
-  text-align: left;
-  color: #ff6060;
-}
-
-.error-return-home {
-  font-family: Montserrat;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: left;
-  text-decoration: underline;
-}
-
-/* ******************************************************************* PAGE ABOUT ******************************************************************* */
 .dropdown {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 .dropdown .about-list {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   text-align: left;
   width: 100%;
   height: 52px;
@@ -331,7 +232,6 @@ h6 {
   padding: 0px 15px;
   background-color: #ff6060;
   color: #f6f6f6;
-  font-family: Montserrat;
   font-size: 24px;
   font-weight: 700;
   border-radius: 5px;
@@ -347,8 +247,7 @@ h6 {
   justify-content: center;
   align-items: center;
   max-width: 1023px;
-  background-color: rgb(246, 246, 246);
-  font-family: Montserrat;
+  background-color: #f6f6f6;
   line-height: 22px;
   font-size: 19px;
   font-weight: 400;
@@ -371,7 +270,7 @@ h6 {
 }
 
 .about-list-content.expand {
-  height: auto;
+  height: 95px;
   padding: 15px 15px;
 }
 
@@ -391,7 +290,34 @@ h6 {
   margin-bottom: 75px;
 }
 
-/* ******************************************************************** APPARTEMENTS PAGES ************************************************************************/
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 650px;
+  height: 280px;
+  margin: 0;
+  color: #ff6060;
+}
+.error img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.error-text {
+  font-size: 36px;
+  font-weight: 500;
+  text-align: left;
+  color: #ff6060;
+}
+
+.error-return-home {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: underline;
+}
+
 .carrousel {
   width: 100%;
   max-width: 1240px;
@@ -447,7 +373,6 @@ h6 {
   position: absolute;
   bottom: 5%;
   left: 50%;
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 500;
   line-height: 25.67px;
@@ -460,14 +385,18 @@ h6 {
   }
 }
 
+.disappear {
+  opacity: 0;
+}
+
 .appartement {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 1240px;
-  gap: 20px;
   padding: 0px 20px;
+  gap: 20px;
 }
 .appartement-contents {
   display: flex;
@@ -482,11 +411,11 @@ h6 {
 .appartement-contents-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   max-width: 1240px;
   width: 100%;
 }
 .appartement-contents-header-titles-title {
-  font-family: Montserrat;
   font-size: 36px;
   font-weight: 500;
   line-height: 51.34px;
@@ -495,7 +424,6 @@ h6 {
 }
 @media (max-width: 480px) {
   .appartement-contents-header-titles-title {
-    font-family: Montserrat;
     font-size: 18px;
     font-weight: 500;
     line-height: 25.67px;
@@ -503,7 +431,6 @@ h6 {
   }
 }
 .appartement-contents-header-titles-subtitles {
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 500;
   line-height: 25.67px;
@@ -523,7 +450,6 @@ h6 {
 .appartement-contents-header-host-name {
   display: flex;
   align-items: center;
-  font-family: Montserrat;
   font-size: 1.2em;
   font-weight: 500;
   line-height: 25.67px;
@@ -590,7 +516,6 @@ h6 {
   border-radius: 15px;
   padding: 0px 10px 0px 10px;
   height: 20px;
-  font-family: Montserrat;
   font-size: 14px;
   font-weight: 700;
   line-height: 19.96px;
@@ -598,7 +523,6 @@ h6 {
 }
 @media (max-width: 375px) {
   .appartement-contents-helper-tags-tag {
-    font-family: Montserrat;
     font-size: 10px;
     font-weight: 700;
     line-height: 14.26px;
@@ -621,6 +545,7 @@ h6 {
 .appartement-contents-dropdowns {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 1240px;
   gap: 15px;
@@ -640,7 +565,6 @@ h6 {
   align-items: center;
   position: relative;
   padding: 40px 15px 0 15px;
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 400;
   line-height: 25.67px;
@@ -652,7 +576,6 @@ h6 {
 }
 @media (max-width: 480px) {
   .appartement-contents-dropdowns-description-content {
-    font-family: Montserrat;
     font-size: 12px;
     font-weight: 400;
     line-height: 17.11px;
@@ -670,8 +593,8 @@ h6 {
 }
 .appartement-contents-dropdowns-description-title {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   padding: 1px 15px;
   top: 0;
@@ -679,7 +602,6 @@ h6 {
   width: 100%;
   max-width: 582px;
   background-color: #ff6060;
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 700;
   line-height: 25.67px;
@@ -690,7 +612,6 @@ h6 {
 @media (max-width: 480px) {
   .appartement-contents-dropdowns-description-title {
     padding: 10px 15px;
-    font-family: Montserrat;
     font-size: 13px;
     font-weight: 700;
     line-height: 18.54px;
@@ -723,7 +644,6 @@ h6 {
   position: relative;
   padding: 40px 15px 0 15px;
   height: 28vh;
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 400;
   line-height: 24px;
@@ -736,7 +656,6 @@ h6 {
 }
 @media (max-width: 480px) {
   .appartement-contents-dropdowns-equipments-content {
-    font-family: Montserrat;
     font-size: 12px;
     font-weight: 400;
     line-height: 17.11px;
@@ -753,8 +672,8 @@ h6 {
 }
 .appartement-contents-dropdowns-equipments-title {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   position: absolute;
   padding: 1px 15px;
   top: 0;
@@ -762,7 +681,6 @@ h6 {
   width: 100%;
   max-width: 582px;
   background-color: #ff6060;
-  font-family: Montserrat;
   font-size: 18px;
   font-weight: 700;
   line-height: 25.67px;
@@ -773,7 +691,6 @@ h6 {
 @media (max-width: 480px) {
   .appartement-contents-dropdowns-equipments-title {
     padding: 10px 15px;
-    font-family: Montserrat;
     font-size: 13px;
     font-weight: 700;
     line-height: 18.54px;
@@ -794,4 +711,59 @@ h6 {
   .appartement-contents-dropdowns-equipments-title-chevron img {
     width: 16px;
   }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0px 20px;
+}
+
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ******************************************************************* GENERAL ******************************************************************* */
+* {
+  list-style-type: none;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+a,
+Link {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

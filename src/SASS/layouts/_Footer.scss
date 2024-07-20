@@ -1,0 +1,33 @@
+.footer {
+  @include flex-column;
+  justify-content: end;
+  background-color: black;
+  width: 100%;
+  max-width: 1440px;
+  height: 209px;
+  gap: 25px;
+  margin-top: 35px;
+  @media (max-width: 480px) {
+    margin-top: 30px;
+    justify-content: center;
+    gap: 0;
+    height: 262px;
+  }
+  &-logo {
+    @include flex-center;
+  }
+  &-copyright {
+    color: $font-color;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34.22px;
+    text-align: center;
+    @media (max-width: 480px) {
+      max-width: 133px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 17.11px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.header {
+  @include flex-row;
+  width: 100%;
+  max-width: 1240px;
+  margin: 35px 0px;
+  padding: 0px 20px;
+  gap: 15px;
+  &-logo img {
+    width: 39vw;
+    max-width: 210px;
+  }
+  &-nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @media (max-width: 375px) {
+      gap: 40px;
+    }
+    & li {
+      font-size: 4.5vw;
+      font-weight: 500;
+      line-height: 34.22px;
+      text-align: right;
+      @media (min-width: 480px) {
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+/* classe permettant de souligner la navigation en fonction de la page sur laquelle nous sommes */
+
+.active {
+  text-decoration: underline;
+}

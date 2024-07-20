@@ -1,0 +1,6 @@
+.main {
+  @include flex-column;
+  width: 100%;
+  max-width: 1240px;
+  padding: 0px 20px;
+}

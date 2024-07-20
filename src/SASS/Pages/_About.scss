@@ -1,0 +1,63 @@
+.dropdown {
+  @include flex-column;
+  .about-list {
+    @include flex-row;
+    text-align: left;
+    width: 100%;
+    height: 52px;
+    max-width: 1023px;
+    padding: 0px 15px;
+    background-color: $primary-color;
+    color: $secondary-color;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: $border-radius-small;
+    margin-top: 35px;
+    @media (max-width: 375px) {
+      margin-top: 30px;
+    }
+    &-content {
+      @include flex-center;
+      max-width: 1023px;
+      background-color: $secondary-color;
+      line-height: 22px;
+      font-size: 19px;
+      font-weight: 400;
+      text-align: left;
+      color: black;
+      transition: height 0.3s ease, padding 0.3s ease;
+      overflow: hidden;
+      height: 0;
+      padding: 0px 15px;
+    }
+    &-chevron {
+      transition: transform 0.25s linear;
+      cursor: pointer;
+      &.rotate {
+        transform: rotate(-180deg);
+      }
+      &.rotate-reverse {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+.about-list-content.expand {
+  height: 95px;
+  padding: 15px 15px;
+}
+
+.about-list-content.unexpand {
+  height: 0px;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.wrapperError {
+  @include flex-column;
+  gap: 30px;
+  margin-bottom: 75px;
+}

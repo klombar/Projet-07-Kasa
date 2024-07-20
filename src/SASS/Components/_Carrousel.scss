@@ -1,0 +1,61 @@
+.carrousel {
+  width: 100%;
+  max-width: 1240px;
+  height: 415px;
+  position: relative;
+  @media (max-width: 480px) {
+    height: 255px;
+  }
+  &-current-image {
+    object-fit: cover;
+    width: 100%;
+    max-width: 1240px;
+    height: 415px;
+    border-radius: $border-radius-large;
+    @media (max-width: 480px) {
+      height: 255px;
+      border-radius: $border-radius-medium;
+    }
+  }
+  &-left-arrow {
+    position: absolute;
+    top: 170px;
+    left: 15px;
+    max-width: 4vw;
+    max-height: 120px;
+    @media (max-width: 480px) {
+      top: 110px;
+      max-width: 4vw;
+    }
+    @media (min-width: 376px) and (max-width: 480px) {
+    }
+  }
+  &-right-arrow {
+    position: absolute;
+    top: 170px;
+    right: 15px;
+    max-width: 4vw;
+    max-height: 120px;
+    @media (max-width: 480px) {
+      top: 110px;
+      max-width: 4vw;
+    }
+  }
+  &-indicator {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.67px;
+    text-align: center;
+    color: $font-color;
+    @media (max-width: 480px) {
+      left: 48%;
+    }
+  }
+}
+
+.disappear {
+  opacity: 0;
+}

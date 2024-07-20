@@ -35,18 +35,26 @@ export default function Carrousel({ pictures }) {
           alt=""
         />
         <img
-          className="carrousel-left-arrow"
+          className={`carrousel-left-arrow ${
+            pictures.length == 1 ? "disappear" : ""
+          }`}
           src={leftArrow}
           alt="chevron gauche du carrousel"
           onClick={previousImage}
         />
         <img
-          className="carrousel-right-arrow"
+          className={`carrousel-right-arrow ${
+            pictures.length == 1 ? "disappear" : ""
+          }`}
           src={rightArrow}
           alt="chevron droit du carrousel"
           onClick={nextImage}
         />
-        <div className="carrousel-indicator">
+        <div
+          className={`carrousel-indicator ${
+            pictures.length == 1 ? "disappear" : ""
+          }`}
+        >
           {currentIndex + 1} / {pictures.length}
         </div>
       </div>

@@ -1,0 +1,53 @@
+/* ******************************************************************* IMPORT ******************************************************************* */
+
+@import "../Utils/Variable";
+@import "../Utils/Mixins";
+@import "../layouts/Header";
+@import "../layouts//Footer";
+@import "../Components/Banner";
+@import "../Components/Gallery";
+@import "../Pages/About";
+@import "../Pages/404error";
+@import "../Components/Carrousel";
+@import "../Components/AppartementContent";
+@import "../Components/Main";
+@import "../Components/App";
+
+/* ******************************************************************* GENERAL ******************************************************************* */
+
+* {
+  list-style-type: none;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  object-fit: cover;
+}
+
+a,
+Link {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}

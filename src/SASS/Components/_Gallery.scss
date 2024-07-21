@@ -15,12 +15,13 @@
   padding: 50px 0;
   margin-top: 35px;
   background-color: $secondary-color;
-  @media (max-width: 375px) {
+  @media (max-width: 480px) {
     background-color: $font-color;
     padding: 0;
     border-radius: 0;
     grid-gap: 22px;
     margin-top: 25px;
+    margin-bottom: 20px;
   }
   &-appartement {
     position: relative;

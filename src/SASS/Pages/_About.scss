@@ -19,6 +19,8 @@
     margin-top: 35px;
     @media (max-width: 480px) {
       margin-top: 31.8px;
+      font-size: 13px;
+      height: 30px;
     }
     &-content {
       @include flex-center;
@@ -50,6 +52,10 @@
 .about-list-content.expand {
   height: 95px;
   padding: 15px 15px;
+  @media (max-width: 800px) {
+    line-height: 17px;
+    height: auto;
+  }
 }
 
 .about-list-content.unexpand {

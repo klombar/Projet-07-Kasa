@@ -13,16 +13,18 @@
     display: flex;
     align-items: center;
     gap: 50px;
-    @media (max-width: 375px) {
-      gap: 40px;
+    @media (max-width: 480px) {
+      gap: 25px;
     }
     & li {
       font-size: 4.5vw;
       font-weight: 500;
-      line-height: 34.22px;
       text-align: right;
       @media (min-width: 480px) {
         font-size: 24px;
+      }
+      @media (max-width: 480px) {
+        font-size: 18px;
       }
     }
   }

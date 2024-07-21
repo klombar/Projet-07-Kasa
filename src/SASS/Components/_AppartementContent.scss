@@ -4,6 +4,7 @@
   max-width: 1240px;
   padding: 0px 20px;
   gap: 20px;
+  margin-bottom: 30px;
   &-contents {
     @include flex-column;
     justify-content: space-between;
@@ -124,7 +125,8 @@
       }
     }
     &-dropdowns {
-      @include flex-row;
+      display: flex;
+      justify-content: space-between;
       width: 100%;
       max-width: 1240px;
       gap: 15px;
@@ -137,10 +139,10 @@
         &-content {
           @include flex-center;
           position: relative;
-          padding: 40px 15px 0 15px;
+          padding: 50px 15px 0 15px;
           font-size: 18px;
           font-weight: 400;
-          line-height: 25.67px;
+          line-height: 23px;
           text-align: left;
           background-color: rgba(246, 246, 246, 0.4509803922);
           overflow: hidden;
@@ -153,7 +155,7 @@
             text-align: left;
           }
           &.expand {
-            height: 21vh;
+            height: 25vh;
             align-items: center;
             gap: 5px;
           }
@@ -169,6 +171,7 @@
           top: 0;
           left: 0;
           width: 100%;
+          height: 50px;
           max-width: 582px;
           background-color: $primary-color;
           font-size: 18px;
@@ -209,16 +212,12 @@
           flex-direction: column;
           justify-content: center;
           position: relative;
-          padding: 40px 15px 0 15px;
-          height: 28vh;
+          text-align: left;
+          overflow: hidden;
+          padding: 50px 15px 0 15px;
           font-size: 18px;
           font-weight: 400;
-          line-height: 24px;
-          text-align: left;
           background-color: rgba(246, 246, 246, 0.4509803922);
-          overflow: hidden;
-          overflow-y: scroll;
-          scrollbar-width: none;
           transition: height 0.3s ease, transform 0.3s ease;
           @media (max-width: 480px) {
             font-size: 12px;
@@ -227,11 +226,10 @@
             text-align: left;
           }
           &.expand {
-            height: 21vh;
+            height: 25vh;
             justify-content: center;
           }
           &.unexpand {
-            transform: translateY(0%);
             height: 0;
           }
         }
@@ -250,6 +248,7 @@
           text-align: left;
           color: $font-color;
           border-radius: $border-radius-medium;
+          height: 50px;
           @media (max-width: 480px) {
             padding: 10px 15px;
             font-size: 13px;

@@ -1,5 +1,9 @@
 .dropdown {
   @include flex-column;
+  margin-bottom: 30px;
+  @media (min-width: 376px) {
+    margin-bottom: 0;
+  }
   .about-list {
     @include flex-row;
     text-align: left;
@@ -13,8 +17,8 @@
     font-weight: 700;
     border-radius: $border-radius-small;
     margin-top: 35px;
-    @media (max-width: 375px) {
-      margin-top: 30px;
+    @media (max-width: 480px) {
+      margin-top: 31.8px;
     }
     &-content {
       @include flex-center;
@@ -54,10 +58,4 @@
 
 .wrapper {
   overflow: hidden;
-}
-
-.wrapperError {
-  @include flex-column;
-  gap: 30px;
-  margin-bottom: 75px;
 }

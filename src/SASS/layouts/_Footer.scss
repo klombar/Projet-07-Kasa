@@ -6,9 +6,7 @@
   max-width: 1440px;
   height: 209px;
   gap: 25px;
-  margin-top: 35px;
   @media (max-width: 480px) {
-    margin-top: 30px;
     justify-content: center;
     gap: 0;
     height: 262px;

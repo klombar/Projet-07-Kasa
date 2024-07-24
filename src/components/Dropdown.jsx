@@ -3,14 +3,10 @@ import chevron from "../assets/Images/aboutListChevron.png";
 
 export default function Dropdown() {
   const [data, setData] = useState([]);
-  const [openIndexes, setOpenIndexes] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleCollapse = (index) => {
-    setOpenIndexes((prevOpenIndexes) =>
-      prevOpenIndexes.includes(index)
-        ? prevOpenIndexes.filter((i) => i !== index)
-        : [...prevOpenIndexes, index]
-    );
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   useEffect(() => {
@@ -36,7 +32,7 @@ export default function Dropdown() {
               {collapse.aboutTitle}
               <span
                 className={`about-list-chevron ${
-                  openIndexes.includes(index) ? "rotate" : "rotate-reverse"
+                  activeIndex === index ? "rotate" : "rotate-reverse"
                 }`}
               >
                 <img src={chevron} alt="chevron" />
@@ -44,7 +40,7 @@ export default function Dropdown() {
             </li>
             <div
               className={`about-list-content ${
-                openIndexes.includes(index) ? "expand" : "unexpand"
+                activeIndex === index ? "expand" : "unexpand"
               }`}
             >
               {collapse.aboutText}

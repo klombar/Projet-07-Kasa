@@ -20,7 +20,7 @@
 }
 @media (max-width: 480px) {
   .header-nav {
-    gap: 25px;
+    gap: 20px;
   }
 }
 .header-nav li {
@@ -293,6 +293,7 @@
 
 .about-list-content.unexpand {
   height: 0px;
+  padding: 0px 15px;
 }
 
 .wrapper {
@@ -303,10 +304,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
   margin-bottom: 75px;
   width: 100%;
-  margin-top: 40px;
+  margin-top: 79px;
   gap: 70px;
 }
 
@@ -465,10 +465,15 @@
 }
 @media (max-width: 480px) {
   .appartement-contents-header-titles-title {
-    font-size: 18px;
+    font-size: 16.1px;
     font-weight: 500;
     line-height: 25.67px;
     text-align: left;
+  }
+}
+@media (min-width: 481px) and (max-width: 950px) {
+  .appartement-contents-header-titles-title {
+    font-size: 5vw;
   }
 }
 .appartement-contents-header-titles-subtitles {
@@ -503,7 +508,7 @@
   }
 }
 .appartement-contents-header-host-image img {
-  width: 100%;
+  width: 64px;
   max-width: 64px;
   height: 64px;
   border-radius: 65px;
@@ -512,6 +517,12 @@
   .appartement-contents-header-host-image img {
     max-width: 32px;
     height: 32px;
+  }
+}
+@media (min-width: 376px) and (max-width: 480px) {
+  .appartement-contents-header-host-image img {
+    max-width: 48px;
+    height: 48px;
   }
 }
 .appartement-contents-helper {
@@ -624,9 +635,14 @@
   }
 }
 .appartement-contents-dropdowns-description-content.expand {
-  height: 25vh;
+  height: 29vh;
   align-items: center;
   gap: 5px;
+}
+@media (max-width: 480px) {
+  .appartement-contents-dropdowns-description-content.expand {
+    height: 21vh;
+  }
 }
 .appartement-contents-dropdowns-description-content.unexpand {
   transform: translateY(0%);
@@ -641,7 +657,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 52px;
   max-width: 582px;
   background-color: #ff6060;
   font-size: 18px;
@@ -703,8 +719,13 @@
   }
 }
 .appartement-contents-dropdowns-equipments-content.expand {
-  height: 25vh;
+  height: 29vh;
   justify-content: center;
+}
+@media (max-width: 480px) {
+  .appartement-contents-dropdowns-equipments-content.expand {
+    height: 20vh;
+  }
 }
 .appartement-contents-dropdowns-equipments-content.unexpand {
   height: 0;
@@ -726,7 +747,7 @@
   text-align: left;
   color: white;
   border-radius: 10px;
-  height: 50px;
+  height: 52px;
 }
 @media (max-width: 480px) {
   .appartement-contents-dropdowns-equipments-title {

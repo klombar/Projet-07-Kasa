@@ -8,7 +8,6 @@ import starVoid from "../assets/Images/star-void.png";
 import Error404 from "../pages/Error404";
 import data from "../data/logements.json";
 import chevron from "../assets/Images/aboutListChevron.png";
-console.log(data);
 
 export default function AppartementContent() {
   const { id } = useParams();

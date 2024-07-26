@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
-import chevron from "../assets/Images/aboutListChevron.png";
+import { useEffect, useState } from "react";
+import DropdownItem from "./DropdownItem";
 
 export default function Dropdown() {
   const [data, setData] = useState([]);
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleCollapse = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
 
   useEffect(() => {
     fetchData();
@@ -27,25 +22,11 @@ export default function Dropdown() {
     <>
       <ul className="dropdown">
         {data.map((collapse, index) => (
-          <React.Fragment key={index}>
-            <li className="about-list" onClick={() => toggleCollapse(index)}>
-              {collapse.aboutTitle}
-              <span
-                className={`about-list-chevron ${
-                  activeIndex === index ? "rotate" : "rotate-reverse"
-                }`}
-              >
-                <img src={chevron} alt="chevron" />
-              </span>
-            </li>
-            <div
-              className={`about-list-content ${
-                activeIndex === index ? "expand" : "unexpand"
-              }`}
-            >
-              {collapse.aboutText}
-            </div>
-          </React.Fragment>
+          <DropdownItem
+            key={index}
+            title={collapse.aboutTitle}
+            content={collapse.aboutText}
+          />
         ))}
       </ul>
     </>

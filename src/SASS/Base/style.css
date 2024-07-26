@@ -228,6 +228,7 @@
 @media (min-width: 376px) {
   .dropdown {
     margin-bottom: 0;
+    margin-top: 0px;
   }
 }
 .dropdown .about-list {
@@ -276,8 +277,18 @@
 .dropdown .about-list-chevron.rotate {
   transform: rotate(-180deg);
 }
+@media (max-width: 480px) {
+  .dropdown .about-list-chevron.rotate img {
+    width: 25px;
+  }
+}
 .dropdown .about-list-chevron.rotate-reverse {
   transform: rotate(0deg);
+}
+@media (max-width: 480px) {
+  .dropdown .about-list-chevron.rotate-reverse img {
+    width: 25px;
+  }
 }
 
 .about-list-content.expand {

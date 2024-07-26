@@ -261,7 +261,7 @@
   max-width: 1023px;
   background-color: #f6f6f6;
   line-height: 22px;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 400;
   text-align: left;
   color: black;
@@ -292,13 +292,13 @@
 }
 
 .about-list-content.expand {
-  height: 95px;
+  height: auto;
   padding: 15px 15px;
 }
-@media (max-width: 800px) {
+@media (max-width: 480px) {
   .about-list-content.expand {
     line-height: 17px;
-    height: auto;
+    font-size: 18px;
   }
 }
 
@@ -458,7 +458,7 @@
   position: relative;
   width: 100%;
   max-width: 1240px;
-  gap: 10px;
+  gap: 20px;
 }
 .appartement-contents-header {
   display: flex;
@@ -469,40 +469,39 @@
 }
 .appartement-contents-header-titles-title {
   font-size: 36px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 51.34px;
   text-align: left;
   color: #ff6060;
 }
 @media (max-width: 480px) {
   .appartement-contents-header-titles-title {
-    font-size: 16.1px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 700;
     line-height: 25.67px;
     text-align: left;
   }
 }
 @media (min-width: 481px) and (max-width: 950px) {
   .appartement-contents-header-titles-title {
-    font-size: 5vw;
+    font-size: 36px;
   }
 }
-.appartement-contents-header-titles-subtitles {
+.appartement-contents-header-titles-subtitle {
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 25.67px;
   text-align: left;
 }
+@media (max-width: 480px) {
+  .appartement-contents-header-titles-subtitle {
+    font-size: 14px;
+  }
+}
 .appartement-contents-header-host {
   display: flex;
+  justify-content: end;
   gap: 10px;
-}
-@media (max-width: 375px) {
-  .appartement-contents-header-host {
-    position: absolute;
-    top: 82px;
-    right: 0px;
-  }
 }
 .appartement-contents-header-host-name {
   display: flex;
@@ -512,10 +511,16 @@
   line-height: 25.67px;
   text-align: right;
   color: #ff6060;
+  max-width: 60px;
 }
 @media (max-width: 480px) {
   .appartement-contents-header-host-name {
     font-size: 0.85em;
+  }
+}
+@media (min-width: 200px) and (max-width: 950px) {
+  .appartement-contents-header-host-name {
+    max-width: none;
   }
 }
 .appartement-contents-header-host-image img {
@@ -542,7 +547,7 @@
   max-width: 1240px;
   width: 100%;
 }
-@media (max-width: 375px) {
+@media (max-width: 480px) {
   .appartement-contents-helper {
     flex-direction: column;
     gap: 15px;
@@ -594,13 +599,18 @@
 }
 .appartement-contents-helper-rating {
   display: flex;
+  align-items: center;
 }
 @media (max-width: 375px) {
   .appartement-contents-helper-rating {
-    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
   }
 }
-@media (max-width: 375px) {
+.appartement-contents-helper-rating img {
+  width: 24px;
+}
+@media (max-width: 480px) {
   .appartement-contents-helper-rating img {
     width: 18px;
   }
@@ -645,8 +655,14 @@
     padding: 30px 15px 0px 15px;
   }
 }
+@media (min-width: 480px) and (max-width: 590px) {
+  .appartement-contents-dropdowns-description-content {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 .appartement-contents-dropdowns-description-content.expand {
-  height: 29vh;
+  height: 28vh;
   align-items: center;
   gap: 5px;
 }
@@ -729,8 +745,14 @@
     padding: 30px 15px 0px 15px;
   }
 }
+@media (min-width: 480px) and (max-width: 590px) {
+  .appartement-contents-dropdowns-equipments-content {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 .appartement-contents-dropdowns-equipments-content.expand {
-  height: 29vh;
+  height: 28vh;
   justify-content: center;
 }
 @media (max-width: 480px) {
@@ -783,6 +805,24 @@
 @media (max-width: 480px) {
   .appartement-contents-dropdowns-equipments-title-chevron img {
     width: 16px;
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.rating-host-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (min-width: 950px) {
+  .rating-host-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column-reverse;
   }
 }
 

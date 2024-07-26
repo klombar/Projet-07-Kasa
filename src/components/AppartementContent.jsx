@@ -51,14 +51,6 @@ export default function AppartementContent() {
               {appartement.location}
             </h5>
           </div>
-          <div className="appartement-contents-header-host">
-            <div className="appartement-contents-header-host-name">
-              {appartement.host.name}
-            </div>
-            <div className="appartement-contents-header-host-image">
-              <img src={appartement.host.picture} alt="photo de l'hôte" />
-            </div>
-          </div>
         </div>
         <div className="appartement-contents-helper">
           <div className="appartement-contents-helper-tags">
@@ -68,12 +60,22 @@ export default function AppartementContent() {
               </div>
             ))}
           </div>
-          <div className="appartement-contents-helper-rating">
-            {ratingArray.map((star, index) => (
-              <div key={index}>
-                <img src={star} alt="star" />
+          <div className="rating-host-wrapper">
+            <div className="appartement-contents-helper-rating">
+              {ratingArray.map((star, index) => (
+                <div key={index}>
+                  <img src={star} alt="star" />
+                </div>
+              ))}
+            </div>
+            <div className="appartement-contents-header-host">
+              <div className="appartement-contents-header-host-name">
+                {appartement.host.name}
               </div>
-            ))}
+              <div className="appartement-contents-header-host-image">
+                <img src={appartement.host.picture} alt="photo de l'hôte" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="appartement-contents-dropdowns">

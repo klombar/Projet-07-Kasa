@@ -11,7 +11,7 @@
     position: relative;
     width: 100%;
     max-width: 1240px;
-    gap: 10px;
+    gap: 20px;
     &-header {
       @include flex-row;
       max-width: 1240px;
@@ -19,34 +19,35 @@
       &-titles {
         &-title {
           font-size: 36px;
-          font-weight: 500;
+          font-weight: 700;
           line-height: 51.34px;
           text-align: left;
           color: $primary-color;
           @media (max-width: 480px) {
-            font-size: 16.1px;
-            font-weight: 500;
+            font-size: 18px;
+            font-weight: 700;
             line-height: 25.67px;
             text-align: left;
           }
           @media (min-width: 481px) and (max-width: 950px) {
-            font-size: 5vw;
+            font-size: 36px;
           }
         }
-        &-subtitles {
+        &-subtitle {
           font-size: 18px;
-          font-weight: 500;
+          font-weight: 600;
           line-height: 25.67px;
           text-align: left;
+          @media (max-width: 480px) {
+            font-size: 14px;
+          }
         }
       }
       &-host {
         display: flex;
+        justify-content: end;
         gap: 10px;
         @media (max-width: 375px) {
-          position: absolute;
-          top: 82px;
-          right: 0px;
         }
         &-name {
           display: flex;
@@ -56,8 +57,12 @@
           line-height: 25.67px;
           text-align: right;
           color: $primary-color;
+          max-width: 60px;
           @media (max-width: 480px) {
             font-size: 0.85em;
+          }
+          @media (min-width: 200px) and (max-width: 950px) {
+            max-width: none;
           }
         }
         &-image img {
@@ -81,7 +86,7 @@
       justify-content: space-between;
       max-width: 1240px;
       width: 100%;
-      @media (max-width: 375px) {
+      @media (max-width: 480px) {
         flex-direction: column;
         gap: 15px;
       }
@@ -121,11 +126,14 @@
       }
       &-rating {
         display: flex;
+        align-items: center;
         @media (max-width: 375px) {
-          margin-bottom: 10px;
+          display: flex;
+          align-items: center;
         }
         & img {
-          @media (max-width: 375px) {
+          width: 24px;
+          @media (max-width: 480px) {
             width: 18px;
           }
         }
@@ -162,8 +170,12 @@
             text-align: left;
             padding: 30px 15px 0px 15px;
           }
+          @media (min-width: 480px) and (max-width: 590px) {
+            font-size: 16px;
+            line-height: 20px;
+          }
           &.expand {
-            height: 29vh;
+            height: 28vh;
             align-items: center;
             gap: 5px;
             @media (max-width: 480px) {
@@ -238,8 +250,12 @@
             text-align: left;
             padding: 30px 15px 0px 15px;
           }
+          @media (min-width: 480px) and (max-width: 590px) {
+            font-size: 16px;
+            line-height: 20px;
+          }
           &.expand {
-            height: 29vh;
+            height: 28vh;
             justify-content: center;
             @media (max-width: 480px) {
               height: 20vh;
@@ -291,5 +307,21 @@
         }
       }
     }
+  }
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.rating-host-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  @media (min-width: 950px) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    flex-direction: column-reverse;
   }
 }

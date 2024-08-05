@@ -7,13 +7,11 @@ import starFull from "../assets/Images/Stars/star-full.png";
 import starVoid from "../assets/Images/Stars/star-void.png";
 import Error404 from "../pages/Error404";
 import data from "../data/logements.json";
-import chevron from "../assets/Images/aboutListChevron.png";
+import DropdownItem from "./DropdownItem";
 
 export default function AppartementContent() {
   const { id } = useParams();
   const [appartement, setAppartement] = useState(null);
-  const [isOpenDescription, setIsOpenDescription] = useState(false);
-  const [isOpenEquipments, setIsOpenEquipments] = useState(false);
 
   useEffect(() => {
     async function getAppartementData() {
@@ -79,52 +77,22 @@ export default function AppartementContent() {
         </div>
         <div className="appartement-contents-dropdowns">
           <div className="appartement-contents-dropdowns-description">
-            <div
-              className={`appartement-contents-dropdowns-description-content ${
-                isOpenDescription ? "expand" : "unexpand"
-              }`}
-            >
-              {appartement.description}
-              <div className="appartement-contents-dropdowns-description-title">
-                Description
-                <div
-                  className={`appartement-contents-dropdowns-description-title-chevron ${
-                    isOpenDescription ? "rotate" : "rotate-reverse"
-                  }`}
-                  onClick={() => setIsOpenDescription(!isOpenDescription)}
-                >
-                  <img
-                    src={chevron}
-                    alt="Chevron qui permettra l'ouverture et la fermeture du collapse"
-                  />
-                </div>
-              </div>
-            </div>
+            <DropdownItem
+              classNameTitle={"dropdown-title"}
+              classNameContent={"dropdown-content"}
+              title={"Description"}
+              content={appartement.description}
+            />
           </div>
           <div className="appartement-contents-dropdowns-equipments">
-            <div
-              className={`appartement-contents-dropdowns-equipments-content ${
-                isOpenEquipments ? "expand" : "unexpand"
-              }`}
-            >
-              {equipments.map((equipment, index) => (
+            <DropdownItem
+              classNameTitle={"dropdown-title"}
+              classNameContent={"dropdown-content"}
+              title={"Equipments"}
+              content={equipments.map((equipment, index) => (
                 <div key={index}>{equipment}</div>
               ))}
-              <div className="appartement-contents-dropdowns-equipments-title">
-                Equipements
-                <div
-                  className={`appartement-contents-dropdowns-equipments-title-chevron ${
-                    isOpenEquipments ? "rotate" : "rotate-reverse"
-                  }`}
-                  onClick={() => setIsOpenEquipments(!isOpenEquipments)}
-                >
-                  <img
-                    src={chevron}
-                    alt="Chevron qui permettra l'ouverture et la fermeture du collapse"
-                  />
-                </div>
-              </div>
-            </div>
+            />
           </div>
         </div>
       </div>

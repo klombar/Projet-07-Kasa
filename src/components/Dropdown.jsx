@@ -23,6 +23,7 @@ export default function Dropdown() {
       <ul className="dropdown">
         {data.map((collapse, index) => (
           <DropdownItem
+            classNameTitle={"about-list"}
             key={index}
             title={collapse.aboutTitle}
             content={collapse.aboutText}

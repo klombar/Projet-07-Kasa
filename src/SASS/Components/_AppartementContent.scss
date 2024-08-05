@@ -325,3 +325,111 @@
     flex-direction: column-reverse;
   }
 }
+
+.about-list {
+  @include flex-row;
+  text-align: left;
+  width: 100%;
+  height: 52px;
+  max-width: 1023px;
+  padding: 0px 15px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: $border-radius-small;
+  margin-top: 35px;
+  @media (max-width: 480px) {
+    margin-top: 31.8px;
+    font-size: 13px;
+    height: 30px;
+  }
+  &-content {
+    @include flex-center;
+    max-width: 1023px;
+    background-color: $secondary-color;
+    line-height: 22px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    color: black;
+    transition: height 0.3s ease, padding 0.3s ease;
+    overflow: hidden;
+    height: 0;
+    padding: 0px 15px;
+  }
+  &-chevron {
+    transition: transform 0.25s linear;
+    cursor: pointer;
+    &.rotate {
+      transform: rotate(-180deg);
+      & img {
+        @media (max-width: 480px) {
+          width: 25px;
+        }
+      }
+    }
+    &.rotate-reverse {
+      transform: rotate(0deg);
+      & img {
+        @media (max-width: 480px) {
+          width: 25px;
+        }
+      }
+    }
+  }
+}
+
+.about-list-content.expand {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 15px 15px;
+}
+
+.about-list-content.unexpand {
+  flex-direction: column;
+  height: 0px;
+  padding: 0px 15px;
+}
+
+.dropdown-title {
+  @include flex-row;
+  text-align: left;
+  width: 100%;
+  height: 52px;
+  max-width: 1023px;
+  padding: 0px 15px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: $border-radius-small;
+  @media (max-width: 480px) {
+    width: 335px;
+    height: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18.54px;
+    text-align: left;
+  }
+}
+
+.dropdown-content.expand {
+  height: 206px;
+  @media (max-width: 480px) {
+    height: 151px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17.11px;
+    text-align: left;
+  }
+}
+
+.dropdown-content.unexpand {
+  height: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17.11px;
+  text-align: left;
+}

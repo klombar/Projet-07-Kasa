@@ -2,7 +2,7 @@ import { useState } from "react";
 import chevron from "../assets/Images/aboutListChevron.png";
 /* eslint-disable react/prop-types */
 
-function DropdownItem({ title, content }) {
+function DropdownItem({ title, content, classNameTitle, classNameContent }) {
   const [isActive, setIsActive] = useState(false);
 
   const toggleCollapse = () => {
@@ -11,7 +11,7 @@ function DropdownItem({ title, content }) {
 
   return (
     <>
-      <li className="about-list" onClick={toggleCollapse}>
+      <li className={classNameTitle} onClick={toggleCollapse}>
         {title}
         <span
           className={`about-list-chevron ${
@@ -21,7 +21,11 @@ function DropdownItem({ title, content }) {
           <img src={chevron} alt="chevron" />
         </span>
       </li>
-      <div className={`about-list-content ${isActive ? "expand" : "unexpand"}`}>
+      <div
+        className={`${classNameContent} about-list-content ${
+          isActive ? "expand" : "unexpand"
+        }`}
+      >
         {content}
       </div>
     </>

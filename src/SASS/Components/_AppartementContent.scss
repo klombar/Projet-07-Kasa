@@ -428,6 +428,7 @@
 
 .dropdown-content.unexpand {
   height: 0;
+  align-items: start;
   @media (max-width: 480px) {
     font-size: 12px;
     font-weight: 400;

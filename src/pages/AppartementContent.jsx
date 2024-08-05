@@ -1,13 +1,13 @@
-import Carrousel from "./Carrousel"; // import du composant carrousel
+import Carrousel from "../components/Carrousel"; // import du composant carrousel
 /* Import de fonctionnalitées  */
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 /* Import des etoiles en .PNG  */
 import starFull from "../assets/Images/Stars/star-full.png";
 import starVoid from "../assets/Images/Stars/star-void.png";
-import Error404 from "../pages/Error404";
+import Error404 from "./Error404";
 import data from "../data/logements.json";
-import DropdownItem from "./DropdownItem";
+import DropdownItem from "../components/DropdownItem";
 
 export default function AppartementContent() {
   const { id } = useParams();

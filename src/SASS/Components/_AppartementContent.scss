@@ -52,7 +52,6 @@
         &-name {
           display: flex;
           align-items: center;
-          font-size: 1.2em;
           font-weight: 500;
           line-height: 25.67px;
           text-align: right;
@@ -145,12 +144,12 @@
       width: 100%;
       max-width: 1240px;
       gap: 15px;
-      @media (max-width: 480px) {
+      @media (max-width: 800px) {
         flex-direction: column;
       }
       &-description {
         width: 100%;
-        max-width: 582px;
+
         &-content {
           @include flex-center;
           position: relative;
@@ -229,7 +228,6 @@
         }
       }
       &-equipments {
-        max-width: 582px;
         width: 100%;
         &-content {
           display: flex;
@@ -406,7 +404,7 @@
   font-weight: 700;
   border-radius: $border-radius-small;
   @media (max-width: 480px) {
-    width: 335px;
+    width: 100%;
     height: 30px;
     font-size: 13px;
     font-weight: 700;

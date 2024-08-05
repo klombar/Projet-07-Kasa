@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import leftArrow from "../assets/Images/left-arrow.png";
-import rightArrow from "../assets/Images/right-arrow.png";
+import leftArrow from "../assets/Images/Carrousel-arrows/left-arrow.png";
+import rightArrow from "../assets/Images/Carrousel-arrows/right-arrow.png";
 
 export default function Carrousel({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0);

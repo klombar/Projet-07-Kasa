@@ -7,7 +7,7 @@ export default function About() {
   return (
     <>
       <Main>
-        <Banner image={bannerAboutImage} />
+        <Banner image={bannerAboutImage} title={""} />
         <Dropdown />
       </Main>
     </>

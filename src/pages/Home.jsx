@@ -7,7 +7,10 @@ export default function Home() {
   return (
     <>
       <Main>
-        <Banner image={bannerHomeImage} />
+        <Banner
+          image={bannerHomeImage}
+          title={"Chez vous, partout et ailleurs"}
+        />
         <Gallery />
       </Main>
     </>

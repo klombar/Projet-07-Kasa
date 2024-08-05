@@ -1,4 +1,4 @@
-import logo from "../assets/Images/LOGO.png";
+import logo from "../assets/Images/Logo/LOGO.png";
 import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {

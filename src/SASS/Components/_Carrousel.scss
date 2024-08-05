@@ -12,6 +12,7 @@
     max-width: 1240px;
     height: 415px;
     border-radius: $border-radius-large;
+    transition: transform 0.5s ease-in-out;
     @media (max-width: 480px) {
       height: 255px;
       border-radius: $border-radius-medium;

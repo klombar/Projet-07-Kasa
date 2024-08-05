@@ -3,8 +3,8 @@ import Carrousel from "./Carrousel"; // import du composant carrousel
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 /* Import des etoiles en .PNG  */
-import starFull from "../assets/Images/star-full.png";
-import starVoid from "../assets/Images/star-void.png";
+import starFull from "../assets/Images/Stars/star-full.png";
+import starVoid from "../assets/Images/Stars/star-void.png";
 import Error404 from "../pages/Error404";
 import data from "../data/logements.json";
 import chevron from "../assets/Images/aboutListChevron.png";
@@ -31,9 +31,8 @@ export default function AppartementContent() {
     return <Error404 />;
   }
 
-  const rating = parseInt(appartement.rating);
   const ratingArray = Array.from({ length: 5 }, (_, index) =>
-    index < rating ? starFull : starVoid
+    index < appartement.rating ? starFull : starVoid
   );
 
   const { tags, equipments, pictures } = appartement;
@@ -64,7 +63,7 @@ export default function AppartementContent() {
             <div className="appartement-contents-helper-rating">
               {ratingArray.map((star, index) => (
                 <div key={index}>
-                  <img src={star} alt="star" />
+                  <img src={star} alt="Etoile de notation" />
                 </div>
               ))}
             </div>

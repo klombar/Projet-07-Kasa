@@ -415,6 +415,8 @@
 
 .dropdown-content.expand {
   height: 206px;
+  justify-content: center;
+  align-items: start;
   @media (max-width: 480px) {
     height: 151px;
     font-size: 12px;

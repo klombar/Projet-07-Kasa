@@ -1,20 +1,35 @@
 import Carrousel from "../components/Carrousel"; // import du composant carrousel
-/* Import de fonctionnalitées  */
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-/* Import des etoiles en .PNG  */
 import starFull from "../assets/Images/Stars/star-full.png";
 import starVoid from "../assets/Images/Stars/star-void.png";
 import Error404 from "./Error404";
-import data from "../data/logements.json";
 import DropdownItem from "../components/DropdownItem";
 
 export default function AppartementContent() {
   const { id } = useParams();
   const [appartement, setAppartement] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
-    async function getAppartementData() {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/logements.json");
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        console.log(
+          "Une erreur s'est produite lors de la récupération des données.",
+          error
+        );
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (data) {
       const clickedAppartement = data.find((app) => app.id === id);
       if (clickedAppartement) {
         setAppartement(clickedAppartement);
@@ -22,8 +37,11 @@ export default function AppartementContent() {
         console.log("Appartement not found");
       }
     }
-    getAppartementData();
-  }, [id]);
+  }, [id, data]);
+
+  if (!data) {
+    return <div>Chargement des données...</div>;
+  }
 
   if (!appartement) {
     return <Error404 />;
